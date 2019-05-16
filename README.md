@@ -1,2 +1,2 @@
 # Item-bank
-收集前端题库/set of web questions
+本项目用于收集有关前端知识体系中遇到的问题

@@ -1,15 +1,18 @@
 <template>
-  <div>
+  <div class="canvasSize">
+    <Login-Img></Login-Img>
     <Login-CanvasBg></Login-CanvasBg>
   </div>
 </template>
 
 <script>
 import LoginCanvasBg from './components/canvasBg.vue'
+import LoginImg from './components/Login.vue'
 export default {
   name: 'index',
   components: {
-    LoginCanvasBg
+    LoginCanvasBg,
+    LoginImg
   },
   data () {
     return {
@@ -25,9 +28,10 @@ export default {
   font-size: 16px;
 }
 
-body {
+.canvasSize {
   /* min-height: 600px; */
   background: white;
+  /* max-height: 625px; */
 }
 ::-webkit-scrollbar {
   display: none;

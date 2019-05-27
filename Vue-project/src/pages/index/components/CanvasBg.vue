@@ -1,7 +1,8 @@
 <template>
   <div>
     <canvas ref="canvas"
-            id="canvas"></canvas>
+            id="canvas"
+            class="canvasss"></canvas>
   </div>
 </template>
 
@@ -95,11 +96,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#canvas
-  width 100%
+.canvasss
   position absolute
   left 0px
   top 0px
-  z-index -999
+  width 100%
+  z-index -1
   background #fefefe
 </style>

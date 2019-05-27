@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bodySize">
     <Index-Header></Index-Header>
     <Index-Knowledge></Index-Knowledge>
     <Index-ArticleList></Index-ArticleList>
@@ -36,10 +36,5 @@ export default {
 
 ul li {
   list-style-type: none;
-}
-
-body {
-  height: 1600px;
-  background: white;
 }
 </style>

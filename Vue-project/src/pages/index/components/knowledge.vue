@@ -1,72 +1,35 @@
 <template>
   <div>
     <ul class="top-knowledge-ul">
-      <li class="top-knowledge-ul-li" style="background: darkgray;color:white;">{{classification}}</li>
-      <li
-        class="top-knowledge-ul-li"
-        v-for="(item, key) in levels"
-        v-bind:key="key.id"
-        @click="addEventListenerNavClick(item)"
-      >{{item.content}}</li>
+      <li class="top-knowledge-ul-li"
+          style="background: darkgray;color:white;">{{classification}}</li>
+      <li class="top-knowledge-ul-li"
+          v-for="(item, key) in levels"
+          v-bind:key="key.id"
+          @click="addEventListenerNavClick(item)">{{item.title}}</li>
     </ul>
   </div>
 </template>
-
 <script>
+// import axios from 'axios'
 export default {
   name: 'IndexKnowledge',
+  props: {
+    levels: Array
+  },
   data () {
     return {
-      classification: '分类：',
-      levels: [{
-        id: '0001',
-        content: 'this指向'
-      }, {
-        id: '0002',
-        content: 'pormise使用'
-      }, {
-        id: '0003',
-        content: 'position布局'
-      }, {
-        id: '0004',
-        content: 'flex布局'
-      }, {
-        id: '0005',
-        content: 'grid布局'
-      }, {
-        id: '0006',
-        content: '浮动布局'
-      }, {
-        id: '0007',
-        content: '动画效果'
-      }, {
-        id: '0008',
-        content: 'vue生命周期'
-      }, {
-        id: '0008',
-        content: 'vue生命周期'
-      }, {
-        id: '0008',
-        content: 'vue生命周期'
-      }, {
-        id: '0008',
-        content: 'vue生命周期'
-      }, {
-        id: '0008',
-        content: 'vue生命周期'
-      }, {
-        id: '0008',
-        content: 'vue生命周期'
-      }, {
-        id: '0008',
-        content: 'vue生命周期'
-      }]
+      classification: '分类：'
     }
   },
   methods: {
     addEventListenerNavClick (item) {
-      console.log(item.content)
+      console.log(item.title)
     }
+  },
+  mounted () {
+    // this.getHomeInfo()
+    // console.log(this.levels)
   }
 }
 </script>
@@ -93,9 +56,11 @@ export default {
   font-size: 12px;
   cursor: pointer;
   margin: 5px 5px;
+  border: solid 1px #f2f2f2;
 }
 
 .top-knowledge-ul-li:hover {
-  color: red;
+  color: black;
+  border: solid 1px #978484;
 }
 </style>

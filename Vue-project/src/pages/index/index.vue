@@ -1,7 +1,7 @@
 <template>
   <div class="bodySize">
     <Index-Header></Index-Header>
-    <Index-Knowledge></Index-Knowledge>
+    <Index-Knowledge :levels="levels"></Index-Knowledge>
     <Index-ArticleList></Index-ArticleList>
     <IndexCanvasBg></IndexCanvasBg>
   </div>
@@ -12,6 +12,8 @@ import IndexHeader from './components/Header'
 import IndexKnowledge from './components/Knowledge'
 import IndexArticleList from './components/ArticleList'
 import IndexCanvasBg from './components/CanvasBg'
+import axios from 'axios'
+
 export default {
   name: 'index',
   components: {
@@ -22,7 +24,20 @@ export default {
   },
   data () {
     return {
+      levels: []
     }
+  },
+  methods: {
+    getHomeInfo () {
+      axios.get('/api/primaryKnowledge.json').then(this.handleGetCityInfoSucc)
+    },
+    handleGetCityInfoSucc (res) {
+      res = res.data
+      this.levels = res.data.knowledge
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>

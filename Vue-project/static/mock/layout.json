@@ -1,5 +1,36 @@
 {
   "ret": true,
+  "articleList": [{
+    "id": 1,
+    "titleList": "弹性布局"
+  }, {
+    "id": 2,
+    "titleList": "栅格布局"
+  }, {
+    "id": 3,
+    "titleList": "流式布局"
+  }, {
+    "id": 4,
+    "titleList": "自适应布局"
+  }, {
+    "id": 5,
+    "titleList": "圣杯布局"
+  }, {
+    "id": 6,
+    "titleList": "双飞翼布局"
+  }, {
+    "id": 7,
+    "titleList": "清除浮动的方式"
+  }, {
+    "id": 8,
+    "titleList": "元素居中的方式"
+  }, {
+    "id": 9,
+    "titleList": "@media媒体查询"
+  }, {
+    "id": 10,
+    "titleList": "部分手机样式模型"
+  }],
   "questions": [{
     "question": "弹性布局的设计实现与应用场景",
     "answer": "yessss"

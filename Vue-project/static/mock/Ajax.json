@@ -1,0 +1,20 @@
+{
+  "ret": true,
+  "articleList": [{
+    "id": 1,
+    "titleList": "什么是ajax"
+  }, {
+    "id": 2,
+    "titleList": "ajax实现过程"
+  }, {
+    "id": 3,
+    "titleList": "ajax的封装(jq)"
+  }],
+  "questions": [{
+    "question": "什么是ajax？",
+    "answer": "ajax是数据的传输的一种请求方式"
+  }, {
+    "question": "ajax实现过程",
+    "answer": "ajax的主要实现过程是XML.requery"
+  }]
+}

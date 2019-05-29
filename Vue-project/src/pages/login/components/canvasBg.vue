@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="canvasBg"></div>
     <canvas ref="canvas"
             id="canvas"
             class="canvass"></canvas>
@@ -124,11 +125,21 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.canvasBg
+  position absolute
+  width 100%
+  height 100%
+  z-index 10
+  -moz-opacity 0.4
+  -khtml-opacity 0.4
+  opacity 0.4
+  background url('../../../assets/in_top_bj.jpg')
 .canvass
   position absolute
   left 0px
   top 0px
   width 100%
+  height 100%
+  margin 0 auto
   z-index -999
-  background #fefefe
 </style>

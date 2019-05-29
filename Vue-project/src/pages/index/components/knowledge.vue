@@ -25,6 +25,7 @@ export default {
   methods: {
     addEventListenerNavClick (item) {
       console.log(item.title)
+      this.$emit('selectKnowleage', item.title)
     }
   },
   mounted () {
@@ -60,7 +61,7 @@ export default {
 }
 
 .top-knowledge-ul-li:hover {
-  color: black;
-  border: solid 1px #978484;
+  color: rgb(201, 59, 59);
+  border: solid 1px #b1b1b1;
 }
 </style>

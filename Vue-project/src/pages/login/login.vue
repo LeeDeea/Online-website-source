@@ -7,7 +7,8 @@
 
 <script>
 import LoginCanvasBg from './components/canvasBg.vue'
-import LoginImg from './components/Login.vue'
+import LoginImg from './components/login.vue'
+
 export default {
   name: 'index',
   components: {

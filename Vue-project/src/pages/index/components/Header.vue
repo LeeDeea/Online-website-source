@@ -98,31 +98,15 @@ export default {
   color white
   cursor auto
 .level1
-  background rgba(195, 195, 255, 0.7)
+  background rgb(195, 195, 255)
   border 1px solid rgb(195, 195, 255)
   color white
-.level2
-  background rgb(124, 124, 255, 0.7)
-  border 1px solid rgb(124, 124, 255)
-  color white
-.level3
-  background rgb(0, 0, 255, 0.7)
-  border 1px solid rgb(0, 0, 255)
-  color white
+.level1:hover
+  background rgb(195, 195, 225)
 .level4
   background rgb(138, 179, 255)
   border 1px solid rgb(138, 179, 255)
   color white
-.level5
-  background rgb(138, 179, 255)
-  border 1px solid rgb(138, 179, 255)
-  color white
-.level6
-  background rgb(138, 179, 255)
-  border 1px solid rgb(138, 179, 255)
-  color white
-.level7
-  background rgb(138, 179, 255)
-  border 1px solid rgb(138, 179, 255)
-  color white
+.level4:hover
+  background rgb(138, 179, 215)
 </style>

@@ -2,13 +2,13 @@
   <div>
     <div class="top_logo"></div>
     <div class="nav">
+      <div onselectstart="return false"
+           class="introduce">来自一位刚毕业的前端学童的介绍：本网站内主要存放一些前端常用知识，有兴趣的同学可以收藏一下哟~</div>
       <router-link to='/index'>
-        <span onselectstart="return false"
-              class="gv"
-              href="">点击新世界</span>
+        <div onselectstart="return false"
+             class="gv"
+             href="">点击新世界</div>
       </router-link>
-      <span onselectstart="return false"
-            class="introduce">来自一位渣渣前端的介绍：本网站内主要存放一些前端常用知识，有兴趣的同学可以收藏一下哟~</span>
     </div>
   </div>
 </template>
@@ -34,28 +34,25 @@ export default {
   width 100%
   height 100%
 .nav
-  width 904px
-  height auto
   position absolute
+  top 70%
+  width 60%
+  height auto
   z-index 30
-  top 420px
-  left 50%
-  margin-left -402px
+  padding 0 20%
+  .introduce
+    color #066197
   .gv
-    text-decoration none
-    background url('../../../assets/nav_gv.png') repeat 0px 0px
+    display inline-block
     width 130px
     height 43px
-    display inline-block
-    text-align center
-    /* 水平居中 */
     line-height 43px
-    /* 上下居中 */
+    background url('../../../assets/nav_gv.png') repeat
+    text-decoration none
+    text-align center
     cursor pointer
-    /* 左浮动 */
     margin 8px 2px 8px 2px
     font 18px / 43px 'microsoft yahei'
     color #066197
-  .introduce
-    color #066197
+    float right
 </style>

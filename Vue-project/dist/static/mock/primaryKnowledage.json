@@ -3,6 +3,7 @@
   "data": {
     "knowledge": [{
       "id": 1,
+      "articleList": "布局方式",
       "title": "布局方式"
     }, {
       "id": 2,
@@ -31,24 +32,40 @@
     }, {
       "id": 10,
       "title": "ECMA6规范(es6)"
+    }, {
+      "id": 11,
+      "title": "Ajax数据请求"
     }],
     "articleList": [{
       "id": 1,
-      "titleList": "弹性布局",
-      "titleList": "栅格布局",
-      "titleList": "流式布局",
-      "titleList": "自适应布局",
-      "titleList": "圣杯布局",
-      "titleList": "双飞翼布局",
-      "titleList": "清除浮动的方式",
-      "titleList": "元素居中的方式",
-      "titleList": "双飞翼布局",
-      "titleList": "双飞翼布局"
+      "titleList": "弹性布局"
     }, {
       "id": 2,
-      "titleList": "@media媒体查询",
+      "titleList": "栅格布局"
+    }, {
+      "id": 3,
+      "titleList": "流式布局"
+    }, {
+      "id": 4,
+      "titleList": "自适应布局"
+    }, {
+      "id": 5,
+      "titleList": "圣杯布局"
+    }, {
+      "id": 6,
+      "titleList": "双飞翼布局"
+    }, {
+      "id": 7,
+      "titleList": "清除浮动的方式"
+    }, {
+      "id": 8,
+      "titleList": "元素居中的方式"
+    }, {
+      "id": 9,
+      "titleList": "@media媒体查询"
+    }, {
+      "id": 10,
       "titleList": "部分手机样式模型"
     }]
-
   }
 }

@@ -1,9 +1,11 @@
 <template>
   <div class="bodySize">
-    <Index-Header></Index-Header>
-    <Index-Knowledge :levels="levels"></Index-Knowledge>
-    <Index-ArticleList></Index-ArticleList>
     <IndexCanvasBg></IndexCanvasBg>
+    <Index-Header></Index-Header>
+    <Index-Knowledge :levels="levels"
+                     @selectKnowleage="changeKnowleage"></Index-Knowledge>
+    <Index-ArticleList :articleList="articleList"
+                       :question="question"></Index-ArticleList>
   </div>
 </template>
 
@@ -24,16 +26,29 @@ export default {
   },
   data () {
     return {
-      levels: []
+      getData: 'primaryKnowledage.json',
+      levels: [],
+      articleList: [],
+      question: []
     }
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/primaryKnowledge.json').then(this.handleGetCityInfoSucc)
+      // 线上环境使用axios
+      // axios.get('https://leedeea.github.io/Online-website/' + './static/mock/' + this.getData).then(this.handleGetKnowleageInfoSucc)
+      // dev使用json
+      axios.get('./static/mock/' + this.getData).then(this.handleGetKnowleageInfoSucc)
     },
-    handleGetCityInfoSucc (res) {
+    handleGetKnowleageInfoSucc (res) {
       res = res.data
+      // console.log(res.data)
       this.levels = res.data.knowledge
+      this.question = res.data.questions
+      this.articleList = res.data.articleList
+      // console.log(this.articleList)
+    },
+    changeKnowleage (x) {
+      console.log(x)
     }
   },
   mounted () {

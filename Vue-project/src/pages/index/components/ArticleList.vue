@@ -13,20 +13,18 @@
     <div class="article-size article-right-width">
       <div>
         <div class="questions">{{dataQuestion}}</div>
-        <div class="answer">
-          <p v-for="(item, index) in dataAnswer"
+        <div v-for="(item, index) in dataAnswer"
              v-bind:key="index">
-            {{item.answer}}
-          </p>
+          <div class="answer">
+          <p>{{item.answer}}</p>
+          <p>{{item.explanation}}</p>
           <img class="questionImg"
-               v-for="(item, index) in imgUrl"
-               v-bind:key="index"
-               :src="dataImge"
+               :src="item.url"
                alt="">
           <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
                   frameborder="0"></iframe> -->
+          </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -45,6 +43,7 @@ export default {
       godColor: 1000000,
       dataQuestion: '题目：请点击上方分类按钮,切换文章列表',
       dataAnswer: [{
+        'id': 12,
         'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
       }],
       dataImge: [{
@@ -80,7 +79,6 @@ export default {
         }
       }
       this.godColor = key
-      console.log(item.titleList)
       this.$emit('answerImg', item.titleList)
     }
   },

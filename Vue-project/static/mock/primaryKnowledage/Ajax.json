@@ -6,7 +6,13 @@
     "questions": {
       "question": "什么是ajax",
       "answer": [{
-        "answer": "是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。如下是百度词条定义"
+        "answer": "ajax是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。如下是百度词条定义",
+        "url": "./static/mock/primaryKnowledage/img/原生ajax.jpg",
+        "explanation": "很简单对吧~"
+      },{
+        "answer": "ajax是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。如下是百度词条定义",
+        "url": "./static/mock/primaryKnowledage/img/原生ajax.jpg",
+        "explanation": ""
       }]
     }
   }, {
@@ -16,7 +22,7 @@
       "question": "ajax是如何实现的",
       "answer": [{
         "answer": "ajax底层使用的是XMLHttpReques",
-        "url": "./static/mock/primaryKnowledage/img/"
+        "url": "./static/mock/primaryKnowledage/img/000.jpg"
       }]
     }
   }, {
@@ -25,7 +31,8 @@
     "questions": {
       "question": "jq封装ajax写法",
       "answer": [{
-        "answer": "jq封装了ajax的写法使得我们只需要传入url地址与、请求类型、请求信息、并等待回调函数callback将数据返回"
+        "answer": "jq封装了ajax的写法使得我们只需要传入url地址与、请求类型、请求信息、并等待回调函数callback将数据返回",
+        "url": "./static/mock/primaryKnowledage/img/ajax的封装(jq).jpg"
       }]
     }
   }]

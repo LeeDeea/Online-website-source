@@ -133,7 +133,7 @@ export default {
   -moz-opacity 0.4
   -khtml-opacity 0.4
   opacity 0.4
-  background url('../../../assets/in_top_bj.jpg')
+  background url('../../../assets/in_top_bj.jpg') no-repeat
 .canvass
   position absolute
   left 0px

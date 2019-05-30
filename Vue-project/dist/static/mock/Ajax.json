@@ -1,0 +1,25 @@
+{
+  "ret": true,
+  "articleList": [{
+    "id": 1,
+    "titleList": "什么是ajax",
+    "questions": {
+      "question": "什么是ajax",
+      "answer": "yessss"
+    }
+  }, {
+    "id": 2,
+    "titleList": "ajax实现过程",
+    "questions": {
+      "question": "什么是ajax",
+      "answer": "yessss"
+    }
+  }, {
+    "id": 3,
+    "titleList": "ajax的封装(jq)",
+    "questions": {
+      "question": "什么是ajax",
+      "answer": "yessss"
+    }
+  }]
+}

@@ -4,8 +4,8 @@
     <Index-Header></Index-Header>
     <Index-Knowledge :levels="levels"
                      @selectKnowleage="changeKnowleage"></Index-Knowledge>
-    <Index-ArticleList :articleList="articleList"
-                       :question="question"></Index-ArticleList>
+    <Index-ArticleList :articleListData="articleList"
+                       @answerImg="getAnswerImg"></Index-ArticleList>
   </div>
 </template>
 
@@ -26,33 +26,41 @@ export default {
   },
   data () {
     return {
-      getData: 'primaryKnowledage.json',
+      getJsonData: 'primaryKnowledage.json',
+      getAnswerData: '',
       levels: [],
-      articleList: [],
-      question: []
+      articleList: []
     }
   },
   methods: {
-    getHomeInfo () {
+    getKnowleage () {
       // 线上环境使用axios
       // axios.get('https://leedeea.github.io/Online-website/' + './static/mock/' + this.getData).then(this.handleGetKnowleageInfoSucc)
       // dev使用json
-      axios.get('./static/mock/' + this.getData).then(this.handleGetKnowleageInfoSucc)
+      axios.get('./static/mock/' + this.getJsonData).then(this.handleGetKnowleageInfoSucc)
     },
     handleGetKnowleageInfoSucc (res) {
+      // 页面打开后 加载"分类标签的数据"
       res = res.data
-      // console.log(res.data)
       this.levels = res.data.knowledge
-      this.question = res.data.questions
-      this.articleList = res.data.articleList
-      // console.log(this.articleList)
     },
-    changeKnowleage (x) {
-      console.log(x)
+    changeKnowleage (res) {
+      // 点击分类 变更文章列表页的数据
+      this.getJsonData = res
+      axios.get('./static/mock/primaryKnowledage/' + this.getJsonData).then(this.changeArticleList)
+    },
+    changeArticleList (res) {
+      // 点击knowleage分类 输出文章列表
+      res = res.data.articleList
+      this.articleList = res
+    },
+    getAnswerImg (res) {
+      // 点击文章列表时 $emit 触发此函数获取图片路径
+      this.getAnswerData = res
     }
   },
   mounted () {
-    this.getHomeInfo()
+    this.getKnowleage()
   }
 }
 </script>

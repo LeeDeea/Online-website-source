@@ -11,10 +11,22 @@
       </ol>
     </div>
     <div class="article-size article-right-width">
-      <div v-for="(item, key) in question"
-           v-bind:key="key">
-        <div class="questions">{{item.question}}</div>
-        <div class="answer">{{item.answer}}</div>
+      <div>
+        <div class="questions">{{dataQuestion}}</div>
+        <div class="answer">
+          <p v-for="(item, index) in dataAnswer"
+             v-bind:key="index">
+            {{item.answer}}
+          </p>
+          <img class="questionImg"
+               v-for="(item, index) in imgUrl"
+               v-bind:key="index"
+               :src="dataImge"
+               alt="">
+          <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
+                  frameborder="0"></iframe> -->
+        </div>
+
       </div>
     </div>
   </div>
@@ -24,31 +36,64 @@
 export default {
   name: 'IndexArticleList',
   props: {
-    articleList: Array,
-    question: Array
+    articleListData: Array
   },
   data () {
     return {
       hotArticle: '文章列表',
       articleLists: true,
-      godColor: 0
+      godColor: 1000000,
+      dataQuestion: '题目：请点击上方分类按钮,切换文章列表',
+      dataAnswer: [{
+        'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+      }],
+      dataImge: [{
+        'url': 'nothing'
+      }],
+      articleList: [{
+        'id': 1,
+        'titleList': '题目存放处',
+        'questions': {
+          'question': '题目：请点击上方分类按钮,切换文章列表',
+          'answer': [{
+            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+          }]
+        }
+      }, {
+        'id': 2,
+        'titleList': '点击切换题目',
+        'questions': {
+          'question': '题目：请点击上方分类按钮,切换文章列表',
+          'answer': [{
+            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+          }]
+        }
+      }]
     }
   },
   methods: {
     addEventListenerNavClick (item, key) {
+      for (let i = 0; i < this.articleList.length; i++) {
+        if (this.articleList[i].id === item.id) {
+          this.dataQuestion = this.articleList[i].questions.question
+          this.dataAnswer = this.articleList[i].questions.answer
+        }
+      }
       this.godColor = key
-      // console.log(this.$refs.article[item.id - 1]) // 可以获取对应id下的dom结构
-      // console.log(item.titleList)
-      // console.log(this.articleList)
+      console.log(item.titleList)
+      this.$emit('answerImg', item.titleList)
     }
   },
   mounted () {
 
   },
   watch: {
-    // articleList () {
-    //   console.log(1)  // 1
-    // }
+    articleListData () {
+      //  导入文章列表数据
+      this.articleList = this.articleListData
+      // 初始化颜色选中
+      this.godColor = 1000000
+    }
   }
 }
 </script>
@@ -108,4 +153,7 @@ export default {
   border-radius 5px
   background #f2f2f2
   color #222
+  .questionImg
+    width auto
+    height auto
 </style>

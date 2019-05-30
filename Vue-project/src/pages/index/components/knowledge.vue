@@ -25,7 +25,7 @@ export default {
   methods: {
     addEventListenerNavClick (item) {
       // console.log(item.title)
-      this.$emit('selectKnowleage', item.title)
+      this.$emit('selectKnowleage', item.articleList)
     }
   },
   mounted () {

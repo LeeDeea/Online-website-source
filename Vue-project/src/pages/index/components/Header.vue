@@ -56,7 +56,7 @@ export default {
   methods: {
     addEventListenerNavClick (item) {
       console.log(item.content)
-      alert('此部分功能尚未扩展')
+      item.content === '初级' ? alert('您当前处于初级习题') : alert('此部分功能尚未扩展')
     }
   }
 }

@@ -21,11 +21,14 @@ export default {
       let Ww = document.body.clientWidth
       let Wh = document.body.clientHeight
       let Num = 100
+      if (Ww < 675) {
+        Num = 30
+      }
       let Data = []// 圆心随机坐标
       function autoWH () { // 初始化操作
         oCanvas.width = Ww
         oCanvas.height = Wh
-        // 生成200个随机的圆心坐标与圆
+        // 生成100个随机的圆心坐标与圆
         for (let i = 0; i < Num; i++) {
           Data[i] = {
             x: Math.random() * Ww,

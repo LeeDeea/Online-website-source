@@ -1,8 +1,10 @@
 <template>
   <div class="article-wrap">
     <div class="article-size article-left-width">
-      <span class="hot-article">文章列表</span>
-      <ol>
+      <span class="hot-article"
+            @click="hideenArticleList()">文章列表</span>
+      <ol class="articleListOl"
+          ref="articleOl">
         <li v-bind:class="{ articleList: articleLists, godColor: key==godColor }"
             ref="article"
             v-for="(item, key) in articleList"
@@ -16,12 +18,12 @@
         <div v-for="(item, index) in dataAnswer"
              v-bind:key="index">
           <div class="answer">
-          <p>{{item.answer}}</p>
-          <p>{{item.explanation}}</p>
-          <img class="questionImg"
-               :src="item.url"
-               alt="">
-          <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
+            <p>{{item.answer}}</p>
+            <p>{{item.explanation}}</p>
+            <img class="questionImg"
+                 :src="item.url"
+                 alt="">
+            <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
                   frameborder="0"></iframe> -->
           </div>
         </div>
@@ -80,6 +82,12 @@ export default {
       }
       this.godColor = key
       this.$emit('answerImg', item.titleList)
+    },
+    hideenArticleList () {
+      console.log(this.$refs.articleOl.style)
+      if (this.$refs.article.diplay === 'none') {
+
+      }
     }
   },
   mounted () {
@@ -151,7 +159,23 @@ export default {
   border-radius 5px
   background #f2f2f2
   color #222
-  .questionImg
-    width auto
+.questionImg
+  width 100%
+  height auto
+@media screen and (max-width: 675px)
+  .article-wrap
+    display block
+    width 90%
+    margin 0 auto
+  .article-left-width
+    width 100%
     height auto
+    margin 5px 0
+  .article-size
+    display block
+    min-height 100px
+  .article-right-width
+    width 100%
+    margin 0
+    padding 0
 </style>

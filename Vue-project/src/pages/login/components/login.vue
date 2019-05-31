@@ -24,12 +24,13 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus" >
 .top_logo
   position absolute
   z-index 30
   background url('../../../assets/7.png') no-repeat center top
   // #199cc4
+  top -5%
   margin 0 auto
   width 100%
   height 100%

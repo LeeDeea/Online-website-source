@@ -3,43 +3,43 @@
   "data": {
     "knowledge": [{
       "id": 1,
-      "articleList": "layout.json",
+      "articleList": "Layout.json",
       "title": "布局方式"
     }, {
       "id": 2,
-      "articleList": "layoutAuto.json",
+      "articleList": "LayoutAuto.json",
       "title": "自适应方式"
     }, {
       "id": 3,
-      "articleList": "cssTransition",
+      "articleList": "CssTransition.json",
       "title": "基础动画-渐进"
     }, {
       "id": 4,
-      "articleList": "cssSelector",
+      "articleList": "CssSelector.json",
       "title": "css选择器"
     }, {
       "id": 5,
-      "articleList": "cssTransition",
+      "articleList": "ThisPointing.json",
       "title": "作用域this指向"
     }, {
       "id": 6,
-      "articleList": "cssTransition",
+      "articleList": "RegularExpression.json",
       "title": "正则表达式"
     }, {
       "id": 7,
-      "articleList": "cssTransition",
+      "articleList": "Array.json",
       "title": "数组操作"
     }, {
       "id": 8,
-      "articleList": "cssTransition",
+      "articleList": "Object.json",
       "title": "对象操作"
     }, {
       "id": 9,
-      "articleList": "cssTransition",
+      "articleList": "Es5.json",
       "title": "ECMA5规范(es5)"
     }, {
       "id": 10,
-      "articleList": "cssTransition",
+      "articleList": "Es6.json",
       "title": "ECMA6规范(es6)"
     }, {
       "id": 11,

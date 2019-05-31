@@ -56,4 +56,7 @@ export default {
     font 18px / 43px 'microsoft yahei'
     color #066197
     float right
+@media screen and (max-width: 675px)
+  .top_logo
+    top -10%
 </style>

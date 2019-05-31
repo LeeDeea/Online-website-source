@@ -1,16 +1,21 @@
 <template>
   <div class="article-wrap">
     <div class="article-size article-left-width">
-      <span class="hot-article"
-            @click="hideenArticleList()">文章列表</span>
-      <ol class="articleListOl"
-          ref="articleOl">
-        <li v-bind:class="{ articleList: articleLists, godColor: key==godColor }"
-            ref="article"
-            v-for="(item, key) in articleList"
-            v-bind:key="key"
-            @click="addEventListenerNavClick(item,key)">{{item.titleList}}</li>
-      </ol>
+      <span class="hot-article">文章列表
+        <span class="showArticle"
+              @click="hideenArticleList()">{{show}}</span>
+      </span>
+      <div class="articleListOl"
+           ref="articleOl"
+           id="articleOl">
+        <ol>
+          <li v-bind:class="{ articleList: articleLists, godColor: key==godColor }"
+              ref="article"
+              v-for="(item, key) in articleList"
+              v-bind:key="key"
+              @click="addEventListenerNavClick(item,key)">{{item.titleList}}</li>
+        </ol>
+      </div>
     </div>
     <div class="article-size article-right-width">
       <div>
@@ -18,11 +23,14 @@
         <div v-for="(item, index) in dataAnswer"
              v-bind:key="index">
           <div class="answer">
-            <p>{{item.answer}}</p>
+            <p class="answerTitle">{{item.answer}}</p>
             <p>{{item.explanation}}</p>
-            <img class="questionImg"
-                 :src="item.url"
-                 alt="">
+            <div class="questionImgWrap">
+              <img class="questionImg"
+                   :src="item.url"
+                   alt="">
+            </div>
+            <p v-html="item.ImgExplanation">{{item.ImgExplanation}}</p>
             <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
                   frameborder="0"></iframe> -->
           </div>
@@ -41,12 +49,13 @@ export default {
   data () {
     return {
       hotArticle: '文章列表',
+      show: 'hidden',
       articleLists: true,
       godColor: 1000000,
       dataQuestion: '题目：请点击上方分类按钮,切换文章列表',
       dataAnswer: [{
         'id': 12,
-        'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+        'explanation': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
       }],
       dataImge: [{
         'url': 'nothing'
@@ -66,7 +75,7 @@ export default {
         'questions': {
           'question': '题目：请点击上方分类按钮,切换文章列表',
           'answer': [{
-            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+            'explanation': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
           }]
         }
       }]
@@ -81,12 +90,14 @@ export default {
         }
       }
       this.godColor = key
-      this.$emit('answerImg', item.titleList)
     },
     hideenArticleList () {
-      console.log(this.$refs.articleOl.style)
-      if (this.$refs.article.diplay === 'none') {
-
+      if (this.show === 'show') {
+        this.$refs.articleOl.style.display = 'block'
+        this.show = 'hidden'
+      } else {
+        this.$refs.articleOl.style.display = 'none'
+        this.show = 'show'
       }
     }
   },
@@ -123,6 +134,10 @@ export default {
   text-align center
   overflow hidden
   color rgb(102, 102, 102)
+.showArticle
+  display none
+  width 67px
+  color #f2f2f2
 .article-size
   display inline-block
   min-height 400px
@@ -154,19 +169,28 @@ export default {
 .answer
   min-height 40px
   line-height 40px
-  margin 0 5px 5px 5px
+  margin 0 5px 0 5px
   padding 15px
-  border-radius 5px
+  border-bottom-right-radius 4px
+  border-bottom-left-radius 4px
+  // background black
   background #f2f2f2
   color #222
+  .answerTitle
+    color red
 .questionImg
-  width 100%
+  width auto
   height auto
 @media screen and (max-width: 675px)
   .article-wrap
     display block
     width 90%
     margin 0 auto
+  .showArticle
+    display inline-block
+    float right
+    background #222
+    padding 0 2%
   .article-left-width
     width 100%
     height auto
@@ -178,4 +202,6 @@ export default {
     width 100%
     margin 0
     padding 0
+  .questionImgWrap
+    overflow-y scroll
 </style>

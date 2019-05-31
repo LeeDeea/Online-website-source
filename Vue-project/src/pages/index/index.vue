@@ -4,8 +4,7 @@
     <Index-Header></Index-Header>
     <Index-Knowledge :levels="levels"
                      @selectKnowleage="changeKnowleage"></Index-Knowledge>
-    <Index-ArticleList :articleListData="articleList"
-                       @answerImg="getAnswerImg"></Index-ArticleList>
+    <Index-ArticleList :articleListData="articleList"></Index-ArticleList>
   </div>
 </template>
 
@@ -27,7 +26,6 @@ export default {
   data () {
     return {
       getJsonData: 'primaryKnowledage.json',
-      getAnswerData: '',
       levels: [],
       articleList: []
     }
@@ -35,7 +33,7 @@ export default {
   methods: {
     getKnowleage () {
       // 线上环境使用axios
-      // axios.get('https://leedeea.github.io/Online-website/' + './static/mock/' + this.getData).then(this.handleGetKnowleageInfoSucc)
+      // axios.get('https://leedeea.github.io/Online-website/' + 'static/mock/' + this.getJsonData).then(this.handleGetKnowleageInfoSucc)
       // dev使用json
       axios.get('./static/mock/' + this.getJsonData).then(this.handleGetKnowleageInfoSucc)
     },
@@ -53,10 +51,6 @@ export default {
       // 点击knowleage分类 输出文章列表
       res = res.data.articleList
       this.articleList = res
-    },
-    getAnswerImg (res) {
-      // 点击文章列表时 $emit 触发此函数获取图片路径
-      this.getAnswerData = res
     }
   },
   mounted () {

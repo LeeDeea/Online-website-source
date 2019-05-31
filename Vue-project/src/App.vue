@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <keep-alive>
-      <router-view/>
+      <router-view />
     </keep-alive>
   </div>
 </template>
@@ -14,6 +14,9 @@ export default {
 </script>
 
 <style>
+body {
+  background: white;
+}
 /* #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

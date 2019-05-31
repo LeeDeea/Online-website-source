@@ -20,7 +20,7 @@ export default {
       let cxt = oCanvas.getContext('2d')// 创建画笔
       let Ww = document.body.clientWidth
       let Wh = document.body.clientHeight
-      let Num = 100
+      let Num = 80
       if (Ww < 675) {
         Num = 30
       }
@@ -33,8 +33,8 @@ export default {
           Data[i] = {
             x: Math.random() * Ww,
             y: Math.random() * Wh,
-            cx: (Math.random() * 0.6 - 0.4) * 2.2,
-            cy: (Math.random() * 0.6 - 0.4) * 2.2
+            cx: (Math.random() * 0.6 - 0.4) * 1.2,
+            cy: (Math.random() * 0.6 - 0.4) * 1.2
           }
           createParticle(Data[i].x, Data[i].y)
         }
@@ -63,7 +63,7 @@ export default {
             Data[i].cy = -Data[i].cy
           }
           for (let j = i + 1; j < Num; j++) {
-            if (Math.pow(Data[i].x - Data[j].x, 2) + Math.pow(Data[i].y - Data[j].y, 2) < 90 * 90) {
+            if (Math.pow(Data[i].x - Data[j].x, 2) + Math.pow(Data[i].y - Data[j].y, 2) < 60 * 60) {
               drawLine(Data[i].x, Data[i].y, Data[j].x, Data[j].y)
             }
           }
@@ -93,7 +93,6 @@ export default {
   },
   mounted () {
     this.initCanvas()
-    // this.showRef()
   }
 }
 </script>

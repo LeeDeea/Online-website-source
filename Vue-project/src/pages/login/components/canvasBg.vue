@@ -19,13 +19,14 @@ export default {
     initCanvas () {
       var canvas = document.getElementById('canvas')
       var ctx = canvas.getContext('2d')
-      var w = canvas.width = document.body.clientWidth
+      // var w = canvas.width = document.body.clientWidth
+      var w = canvas.width = window.innerWidth
       var h = canvas.height = window.innerHeight
       var hue = 217 // 星星颜色
       var stars = [] // new start计数数组 存放this
       var count = 0 // new start计数 index
 
-      var maxStars = 900// 星星数量
+      var maxStars = 800// 星星数量
       var canvas2 = document.createElement('canvas')
       var ctx2 = canvas2.getContext('2d')
       canvas2.width = 100
@@ -113,7 +114,6 @@ export default {
 
         window.requestAnimationFrame(animation)
       }
-
       animation()
     }
   },

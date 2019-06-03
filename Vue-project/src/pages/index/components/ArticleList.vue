@@ -8,29 +8,32 @@
       <div class="articleListOl"
            ref="articleOl"
            id="articleOl">
-        <ol>
+        <ul>
           <li v-bind:class="{ articleList: articleLists, godColor: key==godColor }"
               ref="article"
               v-for="(item, key) in articleList"
               v-bind:key="key"
-              @click="addEventListenerNavClick(item,key)">{{item.titleList}}</li>
-        </ol>
+              @click="addEventListenerNavClick(item,key)">{{key+1}}:{{item.titleList}}</li>
+        </ul>
       </div>
     </div>
     <div class="article-size article-right-width">
       <div>
-        <div class="questions">{{dataQuestion}}</div>
+        <div class="questions">Q:{{dataQuestion}}</div>
         <div v-for="(item, index) in dataAnswer"
              v-bind:key="index">
           <div class="answer">
-            <p class="answerTitle">{{item.answer}}</p>
+            <p>{{item.answer}}</p>
+            <br>
             <p>{{item.explanation}}</p>
-            <div class="questionImgWrap">
+            <br>
+            <p class="questionImgWrap">
               <img class="questionImg"
                    :src="item.url"
                    alt="">
-            </div>
-            <p v-html="item.ImgExplanation">{{item.ImgExplanation}}</p>
+            </p>
+            <p class="imgAnswe"
+               v-html="item.ImgExplanation">{{item.ImgExplanation}}</p>
             <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
                   frameborder="0"></iframe> -->
           </div>
@@ -55,7 +58,7 @@ export default {
       dataQuestion: '题目：请点击上方分类按钮,切换文章列表',
       dataAnswer: [{
         'id': 12,
-        'explanation': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+        'explanation': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
       }],
       dataImge: [{
         'url': 'nothing'
@@ -66,7 +69,7 @@ export default {
         'questions': {
           'question': '题目：请点击上方分类按钮,切换文章列表',
           'answer': [{
-            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
           }]
         }
       }, {
@@ -75,7 +78,7 @@ export default {
         'questions': {
           'question': '题目：请点击上方分类按钮,切换文章列表',
           'answer': [{
-            'explanation': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方还或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
           }]
         }
       }]
@@ -124,7 +127,6 @@ export default {
   width 18%
   margin-right 5px
   border 1px solid #f3f3f3
-  border-radius 12px
 .hot-article
   display block
   height 40px
@@ -140,18 +142,19 @@ export default {
   color #f2f2f2
 .article-size
   display inline-block
-  min-height 400px
+  min-height 5px
 .articleList
   flex-wrap wrap
   min-height 30px
   line-height 30px
   margin-left 40px
-  font-style italic
-  text-decoration underline
-  color rgb(67, 67, 255)
+  // font-style italic
+  // text-decoration underline
+  color rgb(67, 67, 215)
   cursor pointer
+  border-bottom 1px solid #f2f2f2
 .godColor
-  color rgb(255, 196, 35)
+  color red
 .article-right-width
   display flex
   width 81%
@@ -168,7 +171,7 @@ export default {
   color #f2f2f2
 .answer
   min-height 40px
-  line-height 40px
+  line-height 30px
   margin 0 5px 0 5px
   padding 15px
   border-bottom-right-radius 4px
@@ -176,11 +179,22 @@ export default {
   // background black
   background #f2f2f2
   color #222
-  .answerTitle
-    color red
+.answer >>> .K_W
+  display inline-block
+  line-height 20px
+  background pink
+  border-radius 4px
+  padding 1px 4px
+  margin 0 4px
+  color red
+.answerTitle
+  // color red
 .questionImg
   width auto
   height auto
+.imgAnswe
+  border-left 5px solid #f79797
+  padding-left 5px
 @media screen and (max-width: 675px)
   .article-wrap
     display block
@@ -197,11 +211,15 @@ export default {
     margin 5px 0
   .article-size
     display block
-    min-height 100px
+    min-height 0px
   .article-right-width
     width 100%
     margin 0
     padding 0
   .questionImgWrap
     overflow-y scroll
+    overflow-y hidden
+    .questionImg
+      max-width 95%
+      // overflow hidden
 </style>

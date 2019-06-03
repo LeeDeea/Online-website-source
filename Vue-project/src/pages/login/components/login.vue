@@ -3,11 +3,11 @@
     <div class="top_logo"></div>
     <div class="nav">
       <div onselectstart="return false"
-           class="introduce">来自一位刚毕业的前端学童的介绍：本网站内主要存放一些前端常用知识，有兴趣的同学可以收藏一下哟~</div>
+           class="introduce">{{say}}</div>
       <router-link to='/index'>
         <div onselectstart="return false"
              class="gv"
-             href="">点击新世界</div>
+             href="">{{click}}</div>
       </router-link>
     </div>
   </div>
@@ -19,6 +19,8 @@ export default {
   name: 'LoginImg',
   data () {
     return {
+      say: '来自一位刚毕业的前端学童的介绍：本网站内主要存放一些前端常用知识，有兴趣的同学可以收藏一下哟',
+      click: '点击新世界'
     }
   }
 }
@@ -36,7 +38,7 @@ export default {
   height 100%
 .nav
   position absolute
-  top 70%
+  top 60%
   width 60%
   height auto
   z-index 30

@@ -13,7 +13,7 @@
               ref="article"
               v-for="(item, key) in articleList"
               v-bind:key="key"
-              @click="addEventListenerNavClick(item,key)">{{key+1}}:{{item.titleList}}</li>
+              @click="addEventListenerNavClick(item,key)">{{key+1}}.{{item.titleList}}</li>
         </ul>
       </div>
     </div>
@@ -25,7 +25,7 @@
           <div class="answer">
             <p>{{item.answer}}</p>
             <br>
-            <p>{{item.explanation}}</p>
+            <p class="answerExplanation">{{item.explanation}}</p>
             <br>
             <p class="questionImgWrap">
               <img class="questionImg"
@@ -194,6 +194,9 @@ export default {
   height auto
 .imgAnswe
   border-left 5px solid #f79797
+  padding-left 5px
+.answerExplanation
+  border-left 5px solid #bcbcbc
   padding-left 5px
 @media screen and (max-width: 675px)
   .article-wrap

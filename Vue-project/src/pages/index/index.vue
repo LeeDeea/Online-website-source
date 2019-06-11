@@ -65,7 +65,9 @@ export default {
   padding: 0;
   font-size: 16px;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 ul li {
   list-style-type: none;
 }

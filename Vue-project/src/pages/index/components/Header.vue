@@ -124,10 +124,12 @@ export default {
   color white
 .level1:hover
   background rgb(195, 195, 225)
+  transition all 0.3s
 .level4
   background rgb(138, 179, 255)
   border 1px solid rgb(138, 179, 255)
   color white
 .level4:hover
   background rgb(138, 179, 215)
+  transition all 0.3s
 </style>

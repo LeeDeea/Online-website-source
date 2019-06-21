@@ -17,7 +17,14 @@ export default {
   },
   data () {
     return {
+      test: 'test'
     }
+  },
+  methods: {
+
+  },
+  mounted () {
+    this.say()
   }
 }
 </script>

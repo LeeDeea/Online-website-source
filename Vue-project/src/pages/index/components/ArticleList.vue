@@ -60,8 +60,8 @@ export default {
       dataAnswer: [{
         'id': 12,
         'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999',
-        'explanation': '灰色代表题目描述信息',
-        'ImgExplanation': '粉色代表图片描述信息'
+        'explanation': '灰色代表题目描述解析',
+        'ImgExplanation': '粉色代表图片描述或细节分析'
       }],
       dataImge: [{
         'url': 'nothing'
@@ -81,7 +81,7 @@ export default {
         'questions': {
           'question': '题目：请点击上方分类按钮,切换文章列表',
           'answer': [{
-            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+            'answer': '点击左侧切换文章，点击上方分类切换文章列表'
           }]
         }
       }]
@@ -204,7 +204,7 @@ export default {
   line-height 20px
   padding 1px 4px
   margin 0 4px
-  color #666
+  color #fb002e
 .answerTitle
   // color red
 .questionImg
@@ -222,12 +222,15 @@ export default {
     display block
     width 90%
     margin 0 auto
+  .hot-article-title
+    display inline-block
+    width 80%
   .showArticle
-    display block
-    width 20%
+    display inline-block
+    width 16%
     float right
     background #222
-    padding 0 2%
+    padding 0 1%
   .article-left-width
     width 100%
     height auto

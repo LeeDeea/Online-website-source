@@ -26,7 +26,8 @@
           <div class="answer">
             <p><b>{{item.answer}}</b></p>
             <!-- <br> -->
-            <p class="answerExplanation">{{item.explanation}}</p>
+            <p class="answerExplanation"
+               v-html="item.explanation">{{item.explanation}}</p>
             <!-- <br> -->
             <p class="questionImgWrap">
               <img class="questionImg"

@@ -21,10 +21,6 @@ export default {
     }
   },
   methods: {
-
-  },
-  mounted () {
-    this.say()
   }
 }
 </script>

@@ -2,11 +2,11 @@
   "ret": true,
   "articleList": [{
     "id": 1,
-    "titleList": "let、const、var",
+    "titleList": "let、const",
     "questions": {
-      "question": "",
+      "question": "let、const",
       "answer": [{
-        "answer": "",
+        "answer": "我们知道var存在变量提升的问题，这使得在一些特殊的场景使用var所定义的变量在使用时达不到我们想要的效果",
         "explanation": "",
         "url": "",
         "ImgExplanation": ""
@@ -18,8 +18,8 @@
     "questions": {
       "question": "对象字面量如何简写属性",
       "answer": [{
-        "answer": "",
-        "explanation": "定义对象时键值相同可缩写为一个属性名",
+        "answer": "定义对象时键值相同可缩写为一个属性名",
+        "explanation": "",
         "url": "",
         "ImgExplanation": ""
       }]
@@ -28,10 +28,22 @@
     "id": 3,
     "titleList": "赋值解构",
     "questions": {
-      "question": "es5中Object增加哪些方法",
+      "question": "es6中解构赋值",
       "answer": [{
-        "answer": "",
-        "explanation": "Object.getPrototypeOf\nObject.create\nObject.getOwnPropertyNames\nObject.defineProperty\nObject.getOwnPropertyDescriptor\nObject.defineProperties\nObject.keys\nObject.preventExtensions / Object.isExtensible\nObject.seal / Object.isSealed\nObject.freeze / Object.isFrozen\n",
+        "answer": "利用解构赋值可以轻松的实现变量的属性值互换,可以一次性对多个变量共同赋值",
+        "explanation": "",
+        "url": "",
+        "ImgExplanation": ""
+      }]
+    }
+  }, {
+    "id": 4,
+    "titleList": "promise对象",
+    "questions": {
+      "question": "promise对象的作用？",
+      "answer": [{
+        "answer": "promise对象是处理异步操作的对象使用了 Promise 对象之后可以用一种链式调用的方式来组织代码，让代码更加直观（类似jQuery的deferred 对象）",
+        "explanation": "",
         "url": "",
         "ImgExplanation": ""
       }]

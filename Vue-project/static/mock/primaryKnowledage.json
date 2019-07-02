@@ -1,62 +1,50 @@
 {
   "ret": true,
   "data": {
-    "knowledge": [
-      {
-        "id": 1,
-        "articleList": "Layout.json",
-        "title": "布局方式"
-      },
-      {
-        "id": 3,
-        "articleList": "CssTransition.json",
-        "title": "基础动画-渐进"
-      },
-      {
-        "id": 4,
-        "articleList": "CssSelector.json",
-        "title": "css选择器"
-      },
-      {
-        "id": 5,
-        "articleList": "ThisPointing.json",
-        "title": "作用域this指向"
-      },
-      {
-        "id": 6,
-        "articleList": "RegularExpression.json",
-        "title": "正则表达式"
-      },
-      {
-        "id": 7,
-        "articleList": "Array.json",
-        "title": "数组操作"
-      },
-      {
-        "id": 8,
-        "articleList": "Object.json",
-        "title": "对象操作"
-      },
-      {
-        "id": 9,
-        "articleList": "Es5.json",
-        "title": "ECMA5规范(es5)"
-      },
-      {
-        "id": 10,
-        "articleList": "Es6.json",
-        "title": "ECMA6规范(es6)"
-      },
-      {
-        "id": 11,
-        "articleList": "Ajax.json",
-        "title": "Ajax数据请求"
-      },
-      {
-        "id": 12,
-        "articleList": "http.json",
-        "title": "http协议"
-      }
-    ]
+    "knowledge": [{
+      "id": 1,
+      "articleList": "Layout.json",
+      "title": "布局方式"
+    }, {
+      "id": 3,
+      "articleList": "CssTransition.json",
+      "title": "基础动画-渐进"
+    }, {
+      "id": 4,
+      "articleList": "CssSelector.json",
+      "title": "css选择器"
+    }, {
+      "id": 5,
+      "articleList": "ThisPointing.json",
+      "title": "作用域this指向"
+    }, {
+      "id": 6,
+      "articleList": "RegularExpression.json",
+      "title": "正则表达式"
+    }, {
+      "id": 7,
+      "articleList": "Array.json",
+      "title": "数组操作"
+    }, {
+      "id": 8,
+      "articleList": "Object.json",
+      "title": "对象操作"
+    }, {
+      "id": 9,
+      "articleList": "Es5.json",
+      "title": "ECMA5规范(es5)"
+    }, {
+      "id": 10,
+      "articleList": "Es6.json",
+      "title": "ECMA6规范(es6)"
+    }, {
+      "id": 11,
+      "articleList": "Ajax.json",
+      "title": "Ajax数据请求"
+    }, {
+      "id": 12,
+      "articleList": "http.json",
+      "title": "http协议"
+    }]
   }
 }

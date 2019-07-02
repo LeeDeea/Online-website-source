@@ -1,7 +1,7 @@
 <template>
   <div class="bodySize">
     <IndexCanvasBg></IndexCanvasBg>
-    <Index-Header></Index-Header>
+    <Index-Header @selectHeader="changetHeader"></Index-Header>
     <Index-Knowledge :levels="levels"
                      @selectKnowleage="changeKnowleage"></Index-Knowledge>
     <Index-ArticleList :articleListData="articleList"></Index-ArticleList>
@@ -26,6 +26,7 @@ export default {
   data () {
     return {
       getJsonData: 'primaryKnowledage.json',
+      getJsonHeader: 'primaryKnowledage',
       levels: [],
       articleList: []
     }
@@ -42,10 +43,16 @@ export default {
       res = res.data
       this.levels = res.data.knowledge
     },
+    changetHeader (res) {
+      // 初级 中级 高级 切换加载分类标签数据
+      this.getJsonHeader = res
+      let rest = res + '.json'
+      axios.get(`./static/mock/${rest}`).then(this.handleGetKnowleageInfoSucc)
+    },
     changeKnowleage (res) {
       // 点击分类 变更文章列表页的数据
       this.getJsonData = res
-      axios.get('./static/mock/primaryKnowledage/' + this.getJsonData).then(this.changeArticleList)
+      axios.get('./static/mock/' + this.getJsonHeader + '/' + this.getJsonData).then(this.changeArticleList)
     },
     changeArticleList (res) {
       // 点击knowleage分类 输出文章列表

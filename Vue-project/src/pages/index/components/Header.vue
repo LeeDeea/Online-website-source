@@ -72,8 +72,15 @@ export default {
   },
   methods: {
     addEventListenerNavClick (item) {
-      console.log(item.content)
-      item.content === '初级' ? alert('您当前处于初级习题') : alert('此部分功能尚未扩展')
+      // console.log(item.content)
+      // item.content === '初级' ? alert('您当前处于初级习题') : alert('此部分功能尚未扩展')
+      if (item.content === '初级') {
+        this.$emit('selectHeader', 'primaryKnowledage')
+      } else if (item.content === '中级') {
+        this.$emit('selectHeader', 'intermediateKnowledge')
+      } else if (item.content === '高级') {
+        alert('此部分功能尚未扩展')
+      }
     }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "ret": true,
+  "articleList": [{
+    "id": 1,
+    "titleList": "let、const、var",
+    "questions": {
+      "question": "",
+      "answer": [{
+        "answer": "",
+        "explanation": "",
+        "url": "",
+        "ImgExplanation": ""
+      }]
+    }
+  }, {
+    "id": 2,
+    "titleList": "对象字面量属性简写",
+    "questions": {
+      "question": "对象字面量如何简写属性",
+      "answer": [{
+        "answer": "",
+        "explanation": "定义对象时键值相同可缩写为一个属性名",
+        "url": "",
+        "ImgExplanation": ""
+      }]
+    }
+  }, {
+    "id": 3,
+    "titleList": "赋值解构",
+    "questions": {
+      "question": "es5中Object增加哪些方法",
+      "answer": [{
+        "answer": "",
+        "explanation": "Object.getPrototypeOf\nObject.create\nObject.getOwnPropertyNames\nObject.defineProperty\nObject.getOwnPropertyDescriptor\nObject.defineProperties\nObject.keys\nObject.preventExtensions / Object.isExtensible\nObject.seal / Object.isSealed\nObject.freeze / Object.isFrozen\n",
+        "url": "",
+        "ImgExplanation": ""
+      }]
+    }
+  }]
+}

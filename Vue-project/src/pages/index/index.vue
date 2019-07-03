@@ -5,6 +5,7 @@
     <Index-Knowledge :levels="levels"
                      @selectKnowleage="changeKnowleage"></Index-Knowledge>
     <Index-ArticleList :articleListData="articleList"></Index-ArticleList>
+    <Index-BackTop></Index-BackTop>
   </div>
 </template>
 
@@ -13,6 +14,8 @@ import IndexHeader from './components/Header'
 import IndexKnowledge from './components/Knowledge'
 import IndexArticleList from './components/ArticleList'
 import IndexCanvasBg from './components/CanvasBg'
+import IndexBackTop from './components/BackTop'
+
 import axios from 'axios'
 
 export default {
@@ -21,7 +24,8 @@ export default {
     IndexHeader,
     IndexKnowledge,
     IndexArticleList,
-    IndexCanvasBg
+    IndexCanvasBg,
+    IndexBackTop
   },
   data () {
     return {

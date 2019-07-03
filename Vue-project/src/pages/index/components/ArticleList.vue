@@ -29,11 +29,11 @@
             <p class="answerExplanation"
                v-html="item.explanation">{{item.explanation}}</p>
             <!-- <br> -->
-            <p class="questionImgWrap">
+            <div class="questionImgWrap">
               <img class="questionImg"
                    :src="item.url"
                    alt="">
-            </p>
+            </div>
             <p class="imgAnswe"
                v-html="item.ImgExplanation">{{item.ImgExplanation}}</p>
             <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
@@ -132,7 +132,6 @@ export default {
   width 18%
   border 1px solid #f3f3f3
 .hot-article
-  display block
   height 40px
   line-height 40px
   margin-bottom 1px
@@ -180,6 +179,10 @@ export default {
   padding 0 15px
   border-radius 5px
   color #f2f2f2
+.questionImgWrap
+  line-height 0px
+  margin 0px
+  padding 0px
 .answer
   // min-height 40px
   line-height 30px

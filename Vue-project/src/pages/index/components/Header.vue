@@ -16,7 +16,7 @@
           <a class="github"
              title="github"
              href="https://github.com/LeeDeea/Online-website">
-            <svg class="octicon octicon-mark-github v-align-middle"
+            <svg class=""
                  height="32"
                  viewBox="0 0 16 16"
                  version="1.1"

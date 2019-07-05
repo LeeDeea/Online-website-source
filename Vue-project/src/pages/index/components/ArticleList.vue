@@ -147,6 +147,7 @@ export default {
   display none
   width 67px
   color #f2f2f2
+  font-size 14px
 .article-size
   display inline-block
   min-height 5px

@@ -11,7 +11,7 @@
               v-bind:key="key.id"
               @click="addEventListenerNavClick(item)">{{item.content}}</li>
         </div>
-
+        <!-- <div>{{this.$store.state.count}}</div> -->
         <span>
           <a class="github"
              title="github"

@@ -6,6 +6,7 @@
                      @selectKnowleage="changeKnowleage"></Index-Knowledge>
     <Index-ArticleList :articleListData="articleList"></Index-ArticleList>
     <Index-BackTop></Index-BackTop>
+    <div class="buttom-space" ></div>
   </div>
 </template>
 
@@ -181,5 +182,8 @@ html {
 }
 ul li {
   list-style-type: none;
+}
+.buttom-space{
+  height:150px;
 }
 </style>

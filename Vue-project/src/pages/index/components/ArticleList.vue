@@ -24,7 +24,7 @@
         <div v-for="(item, index) in dataAnswer"
              v-bind:key="index">
           <div class="answer">
-            <p><b>{{item.answer}}</b></p>
+            <p class="answer-fontsize"><b>{{item.answer}}</b></p>
             <!-- <br> -->
             <p class="answerExplanation"
                v-html="item.explanation">{{item.explanation}}</p>
@@ -210,6 +210,9 @@ export default {
   padding 1px 4px
   margin 0 4px
   color #fb002e
+.answer-fontsize
+  font-size 16px
+  font-weight 900
 .answerTitle
   // color red
 .questionImg

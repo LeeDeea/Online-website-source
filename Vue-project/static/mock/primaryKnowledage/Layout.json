@@ -321,12 +321,27 @@
     },
     {
       "id": 8,
-      "titleList": "元素居中的方式",
+      "titleList": "元素垂直居中的方式",
       "questions": {
-        "question": "元素居中的方式",
+        "question": "垂直居中的方式",
         "answer": [{
-          "answer": "",
-          "explanation": "",
+          "answer": "1.绝对定位position",
+          "explanation": "利用绝对定位设置50%宽高位置，减去元素本身的一半宽高即可",
+          "url": "",
+          "ImgExplanation": ""
+        }, {
+          "answer": "2.利用元素的margin",
+          "explanation": "利用元素margin: 0 auto属性，实现元素垂直居中",
+          "url": "",
+          "ImgExplanation": ""
+        }, {
+          "answer": "3.弹性布局flex align-items",
+          "explanation": "align-items：center 该属性规定flex元素的 交叉轴（上下）对齐方式",
+          "url": "",
+          "ImgExplanation": ""
+        }, {
+          "answer": "4.对于文字使用line-height",
+          "explanation": "设置元素的line-height:元素高度实现元素垂直居中",
           "url": "",
           "ImgExplanation": ""
         }]
@@ -336,7 +351,7 @@
       "id": 9,
       "titleList": "@media媒体查询",
       "questions": {
-        "question": "使用media媒体查询做移动端或pc端自适应",
+        "question": "使用media媒体查询做移动端自适应",
         "answer": [{
           "answer": "media媒体查询多用于响应式布局，对于多端应用而言响应式布局可节约开发成本，使得多端适配更容易",
           "explanation": "",

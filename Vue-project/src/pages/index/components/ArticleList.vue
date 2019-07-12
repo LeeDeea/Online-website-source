@@ -18,12 +18,12 @@
         </ul>
       </div>
     </div>
-    <div class="article-size article-right-width">
+    <div class="article-size article-right-width ">
       <div>
         <div class="questions">Q:{{dataQuestion}}</div>
-        <div v-for="(item, index) in dataAnswer"
-             v-bind:key="index">
-          <div class="answer">
+        <div class="answer article-right-boxshadow">
+          <div v-for="(item, index) in dataAnswer"
+               v-bind:key="index">
             <p class="answer-fontsize"><b>{{item.answer}}</b></p>
             <!-- <br> -->
             <p class="answerExplanation"
@@ -173,6 +173,8 @@ export default {
   border-radius 12px
   flex-direction column
   flex-wrap wrap
+.article-right-boxshadow
+  box-shadow 1px 1px 7px #888888
 .questions
   min-height 50px
   line-height 50px

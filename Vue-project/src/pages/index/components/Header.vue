@@ -95,7 +95,7 @@ export default {
   position fixed
   top 0
   width 100%
-  box-shadow 0 0 20px 5px rgb(0, 0, 2)
+  // box-shadow 0 0 20px 5px rgb(0, 0, 2)
 .top-nav-ul
   padding 5px 0 5px 0
   width 100%

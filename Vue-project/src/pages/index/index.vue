@@ -1,12 +1,13 @@
 <template>
   <div class="bodySize">
     <IndexCanvasBg></IndexCanvasBg>
+    <Index-TopLine></Index-TopLine>
     <Index-Header @selectHeader="changetHeader"></Index-Header>
     <Index-Knowledge :levels="levels"
                      @selectKnowleage="changeKnowleage"></Index-Knowledge>
     <Index-ArticleList :articleListData="articleList"></Index-ArticleList>
     <Index-BackTop></Index-BackTop>
-    <div class="buttom-space"></div>
+    <Index-ButtonSpace></Index-ButtonSpace>
   </div>
 </template>
 
@@ -16,6 +17,8 @@ import IndexKnowledge from './components/Knowledge'
 import IndexArticleList from './components/ArticleList'
 import IndexCanvasBg from './components/CanvasBg'
 import IndexBackTop from './components/BackTop'
+import IndexButtonSpace from './components/ButtonSpace'
+import IndexTopLine from './components/TopLine'
 
 import axios from 'axios'
 
@@ -26,7 +29,9 @@ export default {
     IndexKnowledge,
     IndexArticleList,
     IndexCanvasBg,
-    IndexBackTop
+    IndexBackTop,
+    IndexButtonSpace,
+    IndexTopLine
   },
   data () {
     return {
@@ -181,8 +186,5 @@ html {
 }
 ul li {
   list-style-type: none;
-}
-.buttom-space {
-  height: 150px;
 }
 </style>

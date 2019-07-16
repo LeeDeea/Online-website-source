@@ -61,7 +61,7 @@ export default {
       dataAnswer: [{
         'id': 12,
         'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999',
-        'explanation': '灰色代表题目描述解析',
+        'explanation': '绿色代表题目描述解析',
         'ImgExplanation': '粉色代表图片描述或细节分析'
       }],
       dataImge: [{
@@ -184,7 +184,7 @@ export default {
   color #f2f2f2
 .questionImgWrap
   line-height 0px
-  margin 0px
+  margin 0px 0px 0px 5px
   padding 0px
 .answer
   // min-height 40px
@@ -197,7 +197,7 @@ export default {
   background #f2f2f2
   color #222
 .answer p
-  margin 15px 0 5px 0
+  margin 15px 0 15px 0
 .answer >>> .K_W
   display inline-block
   line-height 20px
@@ -225,7 +225,7 @@ export default {
   border-left 5px solid #f79797
   padding-left 5px
 .answerExplanation
-  border-left 5px solid #bcbcbc
+  border-left 5px solid #42b983
   padding-left 5px
 @media screen and (max-width: 675px)
   .article-wrap
@@ -254,6 +254,7 @@ export default {
   .questionImgWrap
     overflow-y scroll
     overflow-y hidden
+    margin 0px
     .questionImg
       max-width 95%
       // overflow hidden

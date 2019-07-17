@@ -89,7 +89,7 @@ export default {
 
 <style lang='stylus' scoped>
 .header
-  height 30px
+  height 4px
   background rgb(102, 102, 102)
 .top-shadow
   position fixed

@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="author" content="石巍blog">
+  <meta name="Keywords" content="石巍，前端开发，网页设计，Online，website，web在线题库，题库blog">
+  <meta name="Description" content="个人创建的题库blog">
   <link rel="icon" sizes="any" mask="" href="./favicon.ico">
   <title>石巍的题库~haha才写了一点点</title>
 </head>
@@ -12,5 +15,18 @@
   <div id="app"></div>
   <!-- built files will be auto injected -->
 </body>
-
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 </html>

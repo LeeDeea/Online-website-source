@@ -30,6 +30,11 @@
         "explanation": "渐变使用可是添加多个颜色，十分方便",
         "url": "./static/mock/primaryKnowledage/CssTransitionImg/gradient_linear_ transparent.jpg",
         "ImgExplanation": "background: <span class='K_W'>linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));</span>"
+      }, {
+        "answer": "1.4重复性渐变",
+        "explanation": "渐变使用可是添加多个颜色，十分方便",
+        "url": "./static/mock/primaryKnowledage/CssTransitionImg/gradient_linear_ transparent.jpg",
+        "ImgExplanation": "background: <span class='K_W'>linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));</span>"
       }]
     }
   }],

@@ -33,7 +33,7 @@
     "id": 3,
     "titleList": "数组平拍",
     "questions": {
-      "question": "请实现一个方法，将潜逃的数组扁平化",
+      "question": "请实现一个方法，将嵌套的数组扁平化",
       "answer": [{
         "answer": "1.1递归思维-for-!isArray-recursion",
         "explanation": "思路：新建数组，遍历传入的数组值，判断是否为数组类型，是则push进新数组，否则执行递归方法，对递归后的数组进行concat合并操作",
@@ -77,6 +77,23 @@
         "answer": "",
         "explanation": "",
         "url": "",
+        "ImgExplanation": ""
+      }]
+    }
+  }, {
+    "id": 6,
+    "titleList": "Set方法",
+    "questions": {
+      "question": "Set去重，以及set常见用法",
+      "answer": [{
+        "answer": "1.set用法",
+        "explanation": "通过图片我们可以了解到，Set()方法会返回一个特殊的对象<br>该对象内的<span class='K_W'>值唯一</span>，可<span class='K_W'>添加</span>，可<span class='K_W'>删除</span>，可判断<span class='K_W'>是否存在某值</span>，可<span class='K_W'>获取长度</span>。",
+        "url": "./static/mock/primaryKnowledage/ArrayImg/Set.jpg",
+        "ImgExplanation": "可以利用Set方法的特性，对数组进行去重操作。"
+      }, {
+        "answer": "2.set方法去重",
+        "explanation": "去重方式如下：",
+        "url": "./static/mock/primaryKnowledage/ArrayImg/Set-DuplicationCanBeRemoved.jpg",
         "ImgExplanation": ""
       }]
     }

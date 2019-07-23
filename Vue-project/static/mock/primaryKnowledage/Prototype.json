@@ -2,7 +2,7 @@
   "ret": true,
   "articleList": [{
     "id": 1,
-    "titleList": "原型链操作，优缺点",
+    "titleList": "原型链关系",
     "questions": {
       "question": "",
       "answer": [{

@@ -16,7 +16,7 @@
           <a class="github"
              title="github"
              href="https://github.com/LeeDeea/Online-website">
-            <svg class=""
+            <svg class="github"
                  height="32"
                  viewBox="0 0 16 16"
                  version="1.1"
@@ -120,6 +120,7 @@ export default {
   display inline-block
   width 30px
   height 30px
+  box-shadow 0 2px 0
 .level0
   background rgba(126, 126, 231, 0.7)
   border 1px solid rgb(195, 195, 255)

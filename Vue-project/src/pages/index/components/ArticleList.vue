@@ -1,12 +1,15 @@
 <template>
   <div class="article-wrap">
+    <!-- 左侧文章列表 -->
     <div class="article-size article-left-width">
+      <!-- 左侧文章列表 移动端隐藏按钮 -->
       <div class="hot-article">
         <div class="hot-article-title">文章列表</div>
         <span class="showArticle"
               @click="hideenArticleList()">
           {{show}}</span>
       </div>
+      <!-- 文章列表list -->
       <div ref="articleOl"
            id="articleOl">
         <ul class="articleListUl">
@@ -18,27 +21,47 @@
         </ul>
       </div>
     </div>
+    <!-- 文章详细内容 -->
     <div class="article-size article-right-width ">
       <div>
-        <div class="questions">Q:{{dataQuestion}}</div>
-        <div class="answer article-right-boxshadow">
-          <div v-for="(item, index) in dataAnswer"
-               v-bind:key="index">
-            <p class="answer-fontsize"><b>{{item.answer}}</b></p>
-            <!-- <br> -->
-            <p class="answerExplanation"
-               v-html="item.explanation">{{item.explanation}}</p>
-            <!-- <br> -->
-            <div class="questionImgWrap">
-              <img class="questionImg"
-                   :src="item.url"
-                   alt="">
+        <div class="questions">
+          <transition name="fade"
+                      mode="out-in">
+            <div v-show="shows">
+              Q:{{dataQuestion}}
             </div>
-            <p class="imgAnswe"
-               v-html="item.ImgExplanation">{{item.ImgExplanation}}</p>
-            <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
+          </transition>
+        </div>
+
+        <div class="answer article-right-boxshadow">
+          <transition-group name="fade"
+                            mode="out-in">
+            <div v-for="(item, key) in dataAnswer"
+                 v-bind:key="key"
+                 v-show="shows">
+              <p class="answer-fontsize">
+                <b>{{item.answer}}</b>
+              </p>
+              <!-- <br> -->
+              <p class="answerExplanation"
+                 v-html="item.explanation">
+                {{item.explanation}}
+              </p>
+              <!-- <br> -->
+              <div class="questionImgWrap">
+                <img v-if="item.url"
+                     class="questionImg"
+                     :src="item.url"
+                     alt="">
+              </div>
+              <p class="imgAnswe"
+                 v-html="item.ImgExplanation">
+                {{item.ImgExplanation}}
+              </p>
+              <!-- <iframe src="../../../../static/mock/primaryKnowledage/Ajax/Ajax.json"
                   frameborder="0"></iframe> -->
-          </div>
+            </div>
+          </transition-group>
         </div>
       </div>
     </div>
@@ -85,18 +108,23 @@ export default {
             'answer': '点击左侧切换文章，点击上方分类切换文章列表'
           }]
         }
-      }]
+      }],
+      shows: true
     }
   },
   methods: {
     addEventListenerNavClick (item, key) {
-      for (let i = 0; i < this.articleList.length; i++) {
-        if (this.articleList[i].id === item.id) {
-          this.dataQuestion = this.articleList[i].questions.question
-          this.dataAnswer = this.articleList[i].questions.answer
-        }
-      }
+      this.shows = !this.shows
       this.godColor = key
+      setTimeout(() => {
+        for (let i = 0; i < this.articleList.length; i++) {
+          if (this.articleList[i].id === item.id) {
+            this.dataQuestion = this.articleList[i].questions.question
+            this.dataAnswer = this.articleList[i].questions.answer
+          }
+        }
+        this.shows = !this.shows
+      }, 300)
     },
     hideenArticleList () {
       if (this.show === 'show') {
@@ -109,7 +137,6 @@ export default {
     }
   },
   mounted () {
-
   },
   watch: {
     articleListData () {
@@ -123,139 +150,5 @@ export default {
 </script>
 
 <style lang='stylus'  scoped>
-.article-wrap
-  display flex
-  justify-content space-between
-  width 90%
-  margin 0 auto
-.article-left-width
-  width 18%
-  border 1px solid #f3f3f3
-.hot-article
-  height 40px
-  line-height 40px
-  margin-bottom 1px
-  background #f3f3f3
-  font-size 20px
-  text-align center
-  overflow hidden
-  color rgb(102, 102, 102)
-.hot-article-title
-  width 100%
-  text-align center
-.showArticle
-  display none
-  width 67px
-  color #f2f2f2
-  font-size 14px
-.article-size
-  display inline-block
-  min-height 5px
-.articleListUl
-  flex-wrap wrap
-.articleList
-  min-height 30px
-  line-height 30px
-  padding-left 20px
-  // font-style italic
-  // text-decoration underline
-  color rgb(67, 67, 215)
-  cursor pointer
-  border-bottom 1px solid #f2f2f2
-.articleList:hover
-  background #f2f2f2
-.godColor
-  color red
-.article-right-width
-  display flex
-  width 81%
-  padding 0 2% 2% 2%
-  border-radius 12px
-  flex-direction column
-  flex-wrap wrap
-.article-right-boxshadow
-  box-shadow 1px 1px 7px #888888
-.questions
-  min-height 50px
-  line-height 50px
-  background #222222
-  padding 0 15px
-  border-radius 5px
-  color #f2f2f2
-.questionImgWrap
-  line-height 0px
-  margin 0px 0px 0px 5px
-  padding 0px
-.answer
-  // min-height 40px
-  line-height 30px
-  margin 0 5px 0 5px
-  padding 10px 15px
-  border-bottom-right-radius 4px
-  border-bottom-left-radius 4px
-  // background black
-  background #f2f2f2
-  color #222
-.answer p
-  margin 15px 0 15px 0
-.answer >>> .K_W
-  display inline-block
-  line-height 20px
-  background pink
-  border-radius 4px
-  padding 1px 4px
-  margin 0 4px
-  color red
-.answer >>> .K_W_C
-  display inline-block
-  line-height 20px
-  padding 1px 4px
-  margin 0 4px
-  color #fb002e
-.answer-fontsize
-  font-size 16px
-  font-weight 900
-.answerTitle
-  // color red
-.questionImg
-  width auto
-  max-width 95%
-  height auto
-.imgAnswe
-  border-left 5px solid #f79797
-  padding-left 5px
-.answerExplanation
-  border-left 5px solid #42b983
-  padding-left 5px
-@media screen and (max-width: 675px)
-  .article-wrap
-    display block
-    width 90%
-    margin 0 auto
-  .hot-article-title
-    display inline-block
-    width 80%
-  .showArticle
-    display inline-block
-    width 16%
-    float right
-    background #222
-    padding 0 1%
-  .article-left-width
-    width 100%
-    height auto
-    margin 5px 0
-  .article-size
-    display block
-  .article-right-width
-    width 100%
-    margin 0
-    padding 0
-  .questionImgWrap
-    overflow-y scroll
-    overflow-y hidden
-    margin 0px
-    .questionImg
-      max-width 95%
-      // overflow hidden
+@import '~styles/ArticleList.styl'
 </style>

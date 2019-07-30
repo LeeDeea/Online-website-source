@@ -75,7 +75,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
   font-size: 100%;
 }
 
@@ -91,7 +90,6 @@ i,
 b,
 strong {
   font-style: normal;
-  font-weight: normal;
 }
 
 a {

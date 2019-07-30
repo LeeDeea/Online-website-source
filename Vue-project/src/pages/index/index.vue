@@ -76,115 +76,47 @@ export default {
 }
 </script>
 
-<style>
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-button,
-textarea,
-p,
-blockquote,
-th,
-td {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #fff;
-  color: #555;
-  font-size: 14px;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-}
-
-td,
-th,
-caption {
-  font-size: 14px;
-}
-
-address,
-caption,
-cite,
-code,
-dfn,
-em,
-strong,
-th,
-i,
-b,
-strong {
-  font-style: normal;
-}
-
-a {
-  color: #555;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-img {
-  border: none;
-  vertical-align: middle;
-}
-
-ol,
-ul,
-li {
-  list-style: none;
-}
-
-input,
-textarea,
-select,
-button {
-  font: 14px Verdana, Helvetica, Arial, sans-serif;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-html {
-  overflow-y: scroll;
-}
-
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.clearfix {
-  zoom: 1;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-ul li {
-  list-style-type: none;
-}
+<style lang='stylus'>
+@import '~styles/reset.styl'
+// body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td
+//   margin 0
+//   padding 0
+// body
+//   background #fff
+//   color #555
+//   font-size 14px
+//   font-family Verdana, Arial, Helvetica, sans-serif
+// td, th, caption
+//   font-size 14px
+// address, caption, cite, code, dfn, em, strong, th, i, b, strong
+//   font-style normal
+// a
+//   color #555
+//   text-decoration none
+// a:hover
+//   text-decoration underline
+// img
+//   border none
+//   vertical-align middle
+// ol, ul, li
+//   list-style none
+// input, textarea, select, button
+//   font 14px Verdana, Helvetica, Arial, sans-serif
+// table
+//   border-collapse collapse
+//   border-spacing 0
+// html
+//   overflow-y scroll
+// .clearfix:after
+//   content '.'
+//   display block
+//   height 0
+//   clear both
+//   visibility hidden
+// .clearfix
+//   zoom 1
+// ::-webkit-scrollbar
+//   display none
+// ul li
+//   list-style-type none
 </style>

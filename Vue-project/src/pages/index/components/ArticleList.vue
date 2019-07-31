@@ -5,21 +5,27 @@
       <!-- 左侧文章列表 移动端隐藏按钮 -->
       <div class="hot-article">
         <div class="hot-article-title">文章列表</div>
+
         <span class="showArticle"
               @click="hideenArticleList()">
           {{show}}</span>
+
       </div>
       <!-- 文章列表list -->
-      <div ref="articleOl"
-           id="articleOl">
-        <ul class="articleListUl">
-          <li v-bind:class="{ articleList: articleLists, godColor: key==godColor }"
-              ref="article"
-              v-for="(item, key) in articleList"
-              v-bind:key="key"
-              @click="addEventListenerNavClick(item,key)">{{key+1}}.{{item.titleList}}</li>
-        </ul>
-      </div>
+      <transition name="fade"
+                  mode="out-in">
+        <div ref="articleOl"
+             id="articleOl"
+             v-show="articleShow">
+          <ul class="articleListUl">
+            <li v-bind:class="{ articleList: articleLists, godColor: key==godColor }"
+                ref="article"
+                v-for="(item, key) in articleList"
+                v-bind:key="key"
+                @click="addEventListenerNavClick(item,key)">{{key+1}}.{{item.titleList}}</li>
+          </ul>
+        </div>
+      </transition>
     </div>
     <!-- 文章详细内容 -->
     <div class="article-size article-right-width ">
@@ -80,6 +86,8 @@ export default {
       show: 'hidden',
       articleLists: true,
       godColor: 1000000,
+      shows: true,
+      articleShow: true,
       dataQuestion: '题目：请点击上方分类按钮,切换文章列表',
       dataAnswer: [{
         'id': 12,
@@ -108,8 +116,7 @@ export default {
             'answer': '点击左侧切换文章，点击上方分类切换文章列表'
           }]
         }
-      }],
-      shows: true
+      }]
     }
   },
   methods: {
@@ -127,12 +134,13 @@ export default {
       }, 300)
     },
     hideenArticleList () {
-      if (this.show === 'show') {
-        this.$refs.articleOl.style.display = 'block'
-        this.show = 'hidden'
-      } else {
-        this.$refs.articleOl.style.display = 'none'
+      if (this.show === 'hidden') {
+        this.articleShow = false
         this.show = 'show'
+      } else {
+        this.articleShow = true
+        // this.$refs.articleOl.style.display = 'none'
+        this.show = 'hidden'
       }
     }
   },

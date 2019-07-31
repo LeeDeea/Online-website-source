@@ -13,7 +13,7 @@
         }, {
           "answer": "方法二：正则表达式",
           "explanation": "思路：使用正则匹配对应位置，添加位置并替换为'点'",
-          "url": "./static/mock/primaryKnowledage/ArrayImg/千分符1.jpg",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/千分符2.jpg",
           "ImgExplanation": ""
         }]
       }
@@ -88,24 +88,29 @@
           "ImgExplanation": ""
         }, {
           "answer": "2.1 深拷贝 遍历引用类型，利用递归，实现层层复制",
-          "explanation": "",
-          "url": "./static/mock/primaryKnowledage/ArrayImg/",
+          "explanation": "如图所示",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/recursionDeepCpoy.jpg",
+          "ImgExplanation": "深拷贝而来的数据类型为对象类型，值完全独立"
+        }, {
+          "answer": "2.2 深拷贝 借用JSON.stringify()函数与JSON.parse()函数",
+          "explanation": "我们通过将数组进行JSON的两次转换实现拷贝",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/jsonDeepCopy.jpg",
           "ImgExplanation": ""
         }, {
-          "answer": "2.2 深拷贝 借用JSON.stringify()函数",
-          "explanation": "",
-          "url": "./static/mock/primaryKnowledage/ArrayImg/",
-          "ImgExplanation": ""
+          "answer": "不过JSON转换的函数存在几个缺点",
+          "explanation": "如图所示",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/deepCopyJsonError.png",
+          "ImgExplanation": "虽然存在这些缺点，不过并不影响使用，毕竟没有人会去拷贝undefined和null"
         }, {
           "answer": "2.3 深拷贝 使用JQ的extend方法实现深拷贝",
-          "explanation": "",
-          "url": "./static/mock/primaryKnowledage/ArrayImg/",
+          "explanation": "如果我们在项目中使用了第三方jq库，可以通过$.extend()方法实现深拷贝",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/extendDeepCopy.jpg",
           "ImgExplanation": ""
         }, {
           "answer": "2.4 深拷贝 第三方库，lodash的_.cloneDeep()",
-          "explanation": "",
-          "url": "./static/mock/primaryKnowledage/ArrayImg/",
-          "ImgExplanation": ""
+          "explanation": "目前没接触过，哈哈哈，有机会再写",
+          "url": "",
+          "ImgExplanation": "更新ing···"
         }]
       }
     },

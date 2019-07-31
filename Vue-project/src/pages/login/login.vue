@@ -60,7 +60,8 @@ body {
   background: #fff;
   color: #555;
   font-size: 14px;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-family: "Microsoft YaHei", "SF Pro Display", Roboto, Noto, Arial,
+    "PingFang SC", sans-serif, Verdana, Helvetica;
 }
 
 td,

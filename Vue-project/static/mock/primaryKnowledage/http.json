@@ -68,7 +68,7 @@
     }
   }, {
     "id": 4,
-    "titleList": "httpRequest、httpResponse",
+    "titleList": "httpRequest、Response",
     "questions": {
       "question": "http请求与http响应",
       "answer": [{

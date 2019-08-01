@@ -10,10 +10,6 @@
       "articleList": "CssTransition.json",
       "title": "CSS妙用属性"
     }, {
-      "id": 4,
-      "articleList": "CssSelector.json",
-      "title": "css选择器"
-    }, {
       "id": 5,
       "articleList": "ThisPointing.json",
       "title": "作用域this指向"

@@ -78,5 +78,4 @@ export default {
 
 <style lang='stylus'>
 @import '~styles/reset.styl'
-
 </style>

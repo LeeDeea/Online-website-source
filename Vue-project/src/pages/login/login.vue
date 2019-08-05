@@ -56,7 +56,7 @@ td {
   padding: 0;
 }
 
-body { 
+body {
   background: #fff;
   color: #555;
   font-size: 14px;

@@ -2,13 +2,13 @@
   "ret": true,
   "articleList": [{
     "id": 1,
-    "titleList": "对象遍历",
+    "titleList": "双向绑定-vue之数据劫持",
     "questions": {
-      "question": "",
+      "question": "利用Object.defineProperty实现数据双向绑定(vue3.0将不再使用，而是使用效率更高的proxy代理)",
       "answer": [{
-        "answer": "提上日程",
-        "explanation": "",
-        "url": "",
+        "answer": "",
+        "explanation": "PS:有想了解proxy代理的小伙伴清戳链接哟：<a class='a_href' href='https://www.jianshu.com/p/2a8ec76e0090' target='_blank' >传送门</a>",
+        "url": "./static/mock/primaryKnowledage/ObjectImg/MvvM-vue.jpg",
         "ImgExplanation": ""
       }]
     }

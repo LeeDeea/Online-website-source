@@ -15,4 +15,7 @@ const getters = {
     return state.count
   }
 }
+const getKnowData = {
+
+}
 export default store

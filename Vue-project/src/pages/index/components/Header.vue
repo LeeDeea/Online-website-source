@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div class="top-shadow"></div>
-    <header class="header"></header>
     <div class="top-nav">
       <ul class="top-nav-ul">
         <div>
@@ -80,6 +78,8 @@ export default {
         this.$emit('selectHeader', 'intermediateKnowledge')
       } else if (item.content === '高级') {
         alert('此部分功能尚未扩展')
+      } else {
+        alert('此部分功能尚未扩展')
       }
     }
   }
@@ -88,14 +88,6 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-.header
-  height 4px
-  background rgb(102, 102, 102)
-.top-shadow
-  position fixed
-  top 0
-  width 100%
-  // box-shadow 0 0 20px 5px rgb(0, 0, 2)
 .top-nav-ul
   padding 5px 0 5px 0
   width 100%

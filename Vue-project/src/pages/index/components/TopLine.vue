@@ -1,7 +1,10 @@
 <template>
-  <div class="top-line"
-       ref="Line"
-       :style="`width:${comWidth}%`"></div>
+  <div class="headerTop">
+    <div class="top-line"></div>
+    <div class="liner_heder"
+         ref="Line"
+         :style="`width:${comWidth}%`"></div>
+  </div>
 </template>
 
 <script>
@@ -39,9 +42,27 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
+.headerTop
+  overflow hidden
 .top-line
+  // z-index 99
+  // position fixed
+  // top 0
+  // height 4px
+  width 100%
+  background white
+.liner_heder
+  z-index 100
   position fixed
-  top 0
+  top 0px
   height 4px
-  background red
+  width 100%
+  background -webkit-repeating-linear-gradient(30deg, #c3c3ff 0, #c3c3ff 10px, #acacf9 10px, #acacf9 20px)
+  -webkit-animation move 1s linear infinite
+  box-shadow 0 0 3px 0px
+@keyframes move
+  0%
+    background-position 0 0
+  100%
+    background-position 23px 0
 </style>

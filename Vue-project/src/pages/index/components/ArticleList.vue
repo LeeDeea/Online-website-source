@@ -92,8 +92,8 @@ export default {
       dataAnswer: [{
         'id': 12,
         'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999',
-        'explanation': '绿色代表题目描述解析',
-        'ImgExplanation': '粉色代表图片描述或细节分析'
+        'explanation': '绿色代表题目解析思路',
+        'ImgExplanation': '黄色代表图片描述或细节分析'
       }],
       dataImge: [{
         'url': 'nothing'

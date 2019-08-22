@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const state = {
   count: 1,
+  level: 1,
   getters
 }
 const store = new Vuex.Store({

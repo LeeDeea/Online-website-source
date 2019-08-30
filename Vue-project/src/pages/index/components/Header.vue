@@ -24,6 +24,17 @@
                     d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
             </svg>
           </a>
+          666666666666666666666666{{this.$store.loadingShow}}
+          <div class="loadingbox"
+               v-if="this.$store.loadingShow">
+            <div class="loading"
+                 ref="loading">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </span>
         <div>
           <li class="top-nav-ul-li level4"
@@ -70,6 +81,7 @@ export default {
   },
   methods: {
     addEventListenerNavClick (item) {
+      // console.log(this.$store.loadingShow)
       // console.log(item.content)
       // item.content === '初级' ? alert('您当前处于初级习题') : alert('此部分功能尚未扩展')
       if (item.content === '初级') {
@@ -132,4 +144,52 @@ export default {
 .level4:hover
   background rgb(138, 179, 215)
   transition all 0.3s
+.loadingbox
+  // position fixed
+  // top 10px
+  // left calc(50% - 75px)
+.loading
+  width 30px
+  height 30px
+  background pink
+  position relative
+  overflow hidden
+  border-radius 50%
+.loading div
+  width 15px
+  height 15px
+  background red
+  position absolute
+  border-radius 50%
+  animation move 2s linear infinite
+  filter blur(3px)
+@keyframes move
+  0%, 100%
+    transform translate(0, 0)
+  25%
+    transform translate(100%, 0)
+  50%
+    transform translate(100%, 100%)
+  75%
+    transform translate(0, 100%)
+.loading div:nth-child(1)
+  background red
+  animation-delay 0s
+.loading div:nth-child(2)
+  background green
+  animation-delay -0.5s
+.loading div:nth-child(3)
+  background yellow
+  animation-delay -1s
+.loading div:nth-child(4)
+  background blue
+  animation-delay -1.5s
+.loading:after
+  display block
+  line-height 30px
+  text-align center
+  content 'loading...'
+  font-size 6px
+  color black
+  filter drop-shadow(2px 4px 6px black)
 </style>

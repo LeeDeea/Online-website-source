@@ -9,14 +9,7 @@ const state = {
   getters
 }
 const store = new Vuex.Store({
-  state: state
+  loadingShow: true
 })
-const getters = {
-  addEventLisenner(state) {
-    return state.count
-  }
-}
-const getKnowData = {
 
-}
 export default store

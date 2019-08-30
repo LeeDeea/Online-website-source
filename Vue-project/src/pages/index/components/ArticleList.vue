@@ -1,3 +1,4 @@
+
 <template>
   <div class="article-wrap">
     <!-- 左侧文章列表 -->
@@ -74,6 +75,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'IndexArticleList',
   props: {
@@ -120,7 +122,7 @@ export default {
   },
   methods: {
     addEventListenerNavClick (item, key) {
-      console.log(item, key)
+      // console.log(item, key)
       this.shows = !this.shows
       this.godColor = key
       setTimeout(() => {

@@ -8,6 +8,7 @@
     <Index-ArticleList :articleListData="articleList"></Index-ArticleList>
     <Index-BackTop></Index-BackTop>
     <Index-ButtonSpace></Index-ButtonSpace>
+
   </div>
 </template>
 
@@ -38,7 +39,8 @@ export default {
       getJsonData: 'primaryKnowledage.json',
       getJsonHeader: 'primaryKnowledage',
       levels: [],
-      articleList: []
+      articleList: [],
+      axiosArr: []
     }
   },
   methods: {
@@ -57,21 +59,51 @@ export default {
       // 初级 中级 高级 切换加载分类标签数据
       this.getJsonHeader = res
       let rest = res + '.json'
-      axios.get(`./static/mock/${rest}`).then(this.handleGetKnowleageInfoSucc)
+      let url = `./static/mock/${rest}`
+      let fn = this.handleGetKnowleageInfoSucc
+      this.createdAxios(url, fn)
     },
     changeKnowleage (res) {
       // 点击分类 变更文章列表页的数据
       this.getJsonData = res
-      axios.get('./static/mock/' + this.getJsonHeader + '/' + this.getJsonData).then(this.changeArticleList)
+      let url = './static/mock/' + this.getJsonHeader + '/' + this.getJsonData
+      let fn = this.changeArticleList
+      this.createdAxios(url, fn)
     },
     changeArticleList (res) {
       // 点击knowleage分类 输出文章列表
       res = res.data.articleList
       this.articleList = res
+    },
+    createdAxios (url, fn) {
+      console.log(this.axiosArr)
+      // console.log(this.$store.loadingShow)
+      // 封装拦截器loading显隐
+      let AxioschangeHeader = axios.create({})
+      AxioschangeHeader.interceptors.request.use(config => {
+        if (this.axiosArr.includes(config.url)) {
+          return config
+        } else {
+          // this.$store.loadingShow = true
+          // console.log(this.$store.loadingShow, 1)
+          // this.loadingshow = true
+          // this.axiosArr.push(config.url)
+          return config
+        }
+      })
+      AxioschangeHeader.interceptors.response.use(res => {
+        // this.$store.loadingShow = false
+        // // this.loadingshow = false
+        return res
+      })
+      AxioschangeHeader.get(
+        url
+      ).then(fn)
     }
   },
   mounted () {
     this.getKnowleage()
+    console.log(this.$store.loadingShow, 1)
   }
 }
 </script>

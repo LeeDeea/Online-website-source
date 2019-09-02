@@ -8,7 +8,7 @@
     <Index-ArticleList :articleListData="articleList"></Index-ArticleList>
     <Index-BackTop></Index-BackTop>
     <Index-ButtonSpace></Index-ButtonSpace>
-
+    <Index-Loading :loadingAction="loadingAction"></Index-Loading>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ import IndexCanvasBg from './components/CanvasBg'
 import IndexBackTop from './components/BackTop'
 import IndexButtonSpace from './components/ButtonSpace'
 import IndexTopLine from './components/TopLine'
-
+import IndexLoading from './components/Loading'
 import axios from 'axios'
 
 export default {
@@ -32,7 +32,8 @@ export default {
     IndexCanvasBg,
     IndexBackTop,
     IndexButtonSpace,
-    IndexTopLine
+    IndexTopLine,
+    IndexLoading
   },
   data () {
     return {
@@ -40,7 +41,8 @@ export default {
       getJsonHeader: 'primaryKnowledage',
       levels: [],
       articleList: [],
-      axiosArr: []
+      axiosArr: [],
+      loadingAction: true
     }
   },
   methods: {
@@ -77,23 +79,18 @@ export default {
     },
     createdAxios (url, fn) {
       console.log(this.axiosArr)
-      // console.log(this.$store.loadingShow)
-      // 封装拦截器loading显隐
       let AxioschangeHeader = axios.create({})
       AxioschangeHeader.interceptors.request.use(config => {
         if (this.axiosArr.includes(config.url)) {
           return config
         } else {
-          // this.$store.loadingShow = true
-          // console.log(this.$store.loadingShow, 1)
-          // this.loadingshow = true
+          this.loadingAction = false
           // this.axiosArr.push(config.url)
           return config
         }
       })
       AxioschangeHeader.interceptors.response.use(res => {
-        // this.$store.loadingShow = false
-        // // this.loadingshow = false
+        this.loadingAction = true
         return res
       })
       AxioschangeHeader.get(
@@ -103,7 +100,6 @@ export default {
   },
   mounted () {
     this.getKnowleage()
-    console.log(this.$store.loadingShow, 1)
   }
 }
 </script>

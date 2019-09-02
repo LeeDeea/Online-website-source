@@ -3,13 +3,26 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-const state = {
-  count: 1,
-  level: 1,
-  getters
-}
+
+const loadingShows = true
 const store = new Vuex.Store({
-  loadingShow: true
+  state: {
+    count: 1,
+    loadingShow: true
+  },
+  actions: {
+    changeLoadingShow(newValue, loadingShow) {
+      newValue.commit('changeLoadingShow', loadingShow)
+    }
+  },
+  mutations: {
+    changeLoadingShow(state, loadingShow) {
+      state.loadingShow = loadingShow
+      try {
+        localStorage.loadingShow = loadingShow
+      } catch (e) {}
+    }
+  }
 })
 
 export default store

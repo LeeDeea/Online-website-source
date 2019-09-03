@@ -162,5 +162,5 @@ export default {
 </script>
 
 <style lang='stylus'  scoped>
-@import '~styles/ArticleList.styl'
+@import '~styles/index/ArticleList.styl'
 </style>

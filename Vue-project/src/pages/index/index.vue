@@ -78,7 +78,8 @@ export default {
       this.articleList = res
     },
     createdAxios (url, fn) {
-      console.log(this.axiosArr)
+      // I want build some loading style. So i make this
+      // console.log(this.axiosArr)
       let AxioschangeHeader = axios.create({})
       AxioschangeHeader.interceptors.request.use(config => {
         if (this.axiosArr.includes(config.url)) {
@@ -105,5 +106,5 @@ export default {
 </script>
 
 <style lang='stylus'>
-@import '~styles/reset.styl'
+@import '~styles/index/reset.styl'
 </style>

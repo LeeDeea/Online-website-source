@@ -134,7 +134,9 @@ export default {
           }
           resolve()
         }).then(
-          this.shows = !this.shows
+          setTimeout(() => {
+            this.shows = !this.shows
+          }, 100)
         )
       }, 300)
     },

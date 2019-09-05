@@ -32,11 +32,12 @@ export default {
   },
   watch: {
     loadingAction () {
-      console.log(this.loadingAction)
       if (this.loadingAction === false) {
-        this.$refs.loadings.style.right = '5px'
+        this.$refs.loadings.style.right = '7px'
+        this.$refs.loadings.style.opacity = 1
       } else if (this.loadingAction === true) {
-        this.$refs.loadings.style.right = '-44px'
+        this.$refs.loadings.style.right = '-4px'
+        this.$refs.loadings.style.opacity = 0
       }
     }
   }

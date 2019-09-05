@@ -122,17 +122,20 @@ export default {
   },
   methods: {
     addEventListenerNavClick (item, key) {
-      // console.log(item, key)
       this.shows = !this.shows
       this.godColor = key
       setTimeout(() => {
-        for (let i = 0; i < this.articleList.length; i++) {
-          if (this.articleList[i].id === item.id) {
-            this.dataQuestion = this.articleList[i].questions.question
-            this.dataAnswer = this.articleList[i].questions.answer
+        new Promise((resolve, reject) => {
+          for (let i = 0; i < this.articleList.length; i++) {
+            if (this.articleList[i].id === item.id) {
+              this.dataQuestion = this.articleList[i].questions.question
+              this.dataAnswer = this.articleList[i].questions.answer
+            }
           }
-        }
-        this.shows = !this.shows
+          resolve()
+        }).then(
+          this.shows = !this.shows
+        )
       }, 300)
     },
     hideenArticleList () {

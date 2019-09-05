@@ -132,11 +132,8 @@ export default {
               this.dataAnswer = this.articleList[i].questions.answer
             }
           }
-          resolve()
         }).then(
-          setTimeout(() => {
-            this.shows = !this.shows
-          }, 100)
+          this.shows = !this.shows
         )
       }, 300)
     },
@@ -155,6 +152,7 @@ export default {
   },
   watch: {
     articleListData () {
+      console.log(1)
       //  导入文章列表数据
       this.articleList = this.articleListData
       // 初始化颜色选中

@@ -26,10 +26,25 @@
       "questions": {
         "question": "请对arr=['a','a','c','d','e','f','c','a','e']进行去重",
         "answer": [{
-          "answer": "",
-          "explanation": "思路，新建一个数组，遍历传入数组值，值不在新数组中就push进该新数组中",
+          "answer": "第一种",
+          "explanation": "新建一个数组，遍历传入数组值，值不在新数组中就push进该新数组中",
           "url": "./static/mock/primaryKnowledage/ArrayImg/数组去重1.jpg",
           "ImgExplanation": ""
+        }, {
+          "answer": "第二种",
+          "explanation": "使用数组对象reduce()函数进行操作",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/数组去重2.jpg",
+          "ImgExplanation": "缺点:如果对数组的reduce()api不熟悉可能会比较难理解"
+        }, {
+          "answer": "第三种",
+          "explanation": "使用ES6中Set()去重",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/数组去重3.jpg",
+          "ImgExplanation": "缺点:es6方法，考虑兼容性问题，并且该方法无法去除\"{}\"空对象"
+        }, {
+          "answer": "第四种",
+          "explanation": "使用数组filter()函数去重",
+          "url": "./static/mock/primaryKnowledage/ArrayImg/arrRepeat4.jpg",
+          "ImgExplanation": "注:filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。"
         }]
       }
     },

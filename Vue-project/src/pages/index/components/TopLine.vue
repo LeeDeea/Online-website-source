@@ -30,7 +30,7 @@ export default {
           var finsh = (lisennerheight / scorllHeight) * 100
           finsh = Number(finsh.toString().slice(0, 6))
           this.comWidth = finsh
-        }, 15)
+        }, 12)
       })
     }
   },

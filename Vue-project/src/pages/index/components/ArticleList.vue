@@ -83,12 +83,18 @@ export default {
   },
   data () {
     return {
+      // 文章列表标题
       hotArticle: '文章列表',
+      // 低宽度下 控制文章显隐按钮的show值
       show: 'hidden',
+      // 低宽度下 控制为文章列表的动态消失
       articleLists: true,
+      // 文章点击颜色变化的索引 默认值为1000000
       godColor: 1000000,
+      // 两个变量为：切换文章列表标题时，控制文章内容显隐
       shows: true,
       articleShow: true,
+      // 默认加载数据
       dataQuestion: '题目：请点击上方分类按钮,切换文章列表',
       dataAnswer: [{
         'id': 12,
@@ -122,6 +128,7 @@ export default {
   },
   methods: {
     addEventListenerNavClick (item, key) {
+      // 切换左侧文章列表 更新右侧内容
       this.shows = !this.shows
       this.godColor = key
       setTimeout(() => {
@@ -138,6 +145,7 @@ export default {
       }, 300)
     },
     hideenArticleList () {
+      // 控制文章列表显隐
       if (this.show === 'hidden') {
         this.articleShow = false
         this.show = 'show'
@@ -152,12 +160,11 @@ export default {
   },
   watch: {
     articleListData () {
-      console.log(1)
-      //  导入文章列表数据
+      // 导入文章列表数据
       this.articleList = this.articleListData
       // 初始化颜色选中
       this.godColor = 1000000
-      // 载入执行
+      // 切换载入第一个文章
       this.addEventListenerNavClick({ id: 1 }, 0)
     }
   }

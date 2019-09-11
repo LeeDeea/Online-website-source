@@ -31,7 +31,7 @@ export default {
         var finsh = (lisennerheight / scorllHeight) * 100
         finsh = Number(finsh.toString().slice(0, 6))
         this.comWidth = finsh
-        // }, 12)
+        // }, 14)
       })
     }
   },
@@ -61,6 +61,7 @@ export default {
   background -webkit-repeating-linear-gradient(30deg, #c3c3ff 0, #c3c3ff 10px, #acacf9 10px, #acacf9 20px)
   -webkit-animation move 1s linear infinite
   box-shadow 0 0 3px 0px
+  // transition width .1s
 @keyframes move
   0%
     background-position 0 0

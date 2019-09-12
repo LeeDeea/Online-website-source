@@ -75,7 +75,9 @@ export default {
   },
   methods: {
     addEventListenerNavClick (item) {
-      if (item.content === '初级') {
+      if (item.content === '难度') {
+        return ''
+      } else if (item.content === '初级') {
         this.$emit('selectHeader', 'primaryKnowledage')
       } else if (item.content === '中级') {
         this.$emit('selectHeader', 'intermediateKnowledge')

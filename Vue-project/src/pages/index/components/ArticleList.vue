@@ -50,6 +50,7 @@
               </p>
               <!-- <br> -->
               <p class="answerExplanation"
+                 v-if="item.explanation"
                  v-html="item.explanation">
                 {{item.explanation}}
               </p>
@@ -61,6 +62,7 @@
                      alt="">
               </div>
               <p class="imgAnswe"
+                 v-if="item.ImgExplanation"
                  v-html="item.ImgExplanation">
                 {{item.ImgExplanation}}
               </p>

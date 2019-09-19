@@ -59,7 +59,8 @@
                 <img v-if="item.url"
                      class="questionImg"
                      :src="item.url"
-                     alt="">
+                     alt=""
+                     @load="imgfinish(item.url)">
               </div>
               <p class="imgAnswe"
                  v-if="item.ImgExplanation"
@@ -98,6 +99,7 @@ export default {
       articleShow: true,
       // 默认加载数据
       dataQuestion: '题目：请点击上方分类按钮,切换文章列表',
+
       dataAnswer: [{
         'id': 12,
         'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999',
@@ -113,7 +115,10 @@ export default {
         'questions': {
           'question': '题目：请点击上方分类按钮,切换文章列表',
           'answer': [{
-            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999'
+            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999',
+            'explanation': '',
+            'url': '',
+            'ImgExplanation': ''
           }]
         }
       }, {
@@ -122,29 +127,40 @@ export default {
         'questions': {
           'question': '题目：请点击上方分类按钮,切换文章列表',
           'answer': [{
-            'answer': '点击左侧切换文章，点击上方分类切换文章列表'
+            'answer': '点击左侧切换文章，点击上方分类切换文章列表',
+            'explanation': '',
+            'url': '',
+            'ImgExplanation': ''
           }]
         }
-      }]
+      }],
+      index: 0
     }
   },
   methods: {
     addEventListenerNavClick (item, key) {
+      this.index = 0
       // 切换左侧文章列表 更新右侧内容
+      // 隐藏
       this.shows = !this.shows
       this.godColor = key
       setTimeout(() => {
-        new Promise((resolve, reject) => {
+        let promiseData = new Promise((resolve, reject) => {
           for (let i = 0; i < this.articleList.length; i++) {
             if (this.articleList[i].id === item.id) {
               this.dataQuestion = this.articleList[i].questions.question
               this.dataAnswer = this.articleList[i].questions.answer
             }
           }
-        }).then(
+          resolve()
+        })
+        promiseData.then(
           this.shows = !this.shows
         )
       }, 300)
+    },
+    imgfinish (item) {
+      // console.log(this.index += 1, item)
     },
     hideenArticleList () {
       // 控制文章列表显隐
@@ -153,12 +169,9 @@ export default {
         this.show = 'show'
       } else {
         this.articleShow = true
-        // this.$refs.articleOl.style.display = 'none'
         this.show = 'hidden'
       }
     }
-  },
-  mounted () {
   },
   watch: {
     articleListData () {
@@ -167,7 +180,8 @@ export default {
       // 初始化颜色选中
       this.godColor = 1000000
       // 切换载入第一个文章
-      this.addEventListenerNavClick({ id: 1 }, 0)
+      console.log(this.articleList)
+      this.addEventListenerNavClick(this.articleList[0], 0)
     }
   }
 }

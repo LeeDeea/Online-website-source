@@ -180,7 +180,7 @@ export default {
       // 初始化颜色选中
       this.godColor = 1000000
       // 切换载入第一个文章
-      console.log(this.articleList)
+      // console.log(this.articleList)
       this.addEventListenerNavClick(this.articleList[0], 0)
     }
   }

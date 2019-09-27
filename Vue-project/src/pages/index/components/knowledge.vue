@@ -1,13 +1,18 @@
 <template>
   <div>
-    <ul class="top-knowledge-ul">
-      <li class="top-knowledge-ul-li"
-          style="background: darkgray;color:white;">{{classification}}</li>
-      <li class="top-knowledge-ul-li"
-          v-for="(item, key) in levels"
-          v-bind:key="key.id"
-          @click="addEventListenerNavClick(item)">{{item.title}}</li>
-    </ul>
+    <transition name="fade"
+                mode="out-in">
+      <div>
+        <ul class="top-knowledge-ul">
+          <li class="top-knowledge-ul-li disabled"
+              style="background: darkgray;color:white;">{{classification}}</li>
+          <li class="top-knowledge-ul-li"
+              v-for="(item, key) in levels"
+              v-bind:key="key.id"
+              @click="addEventListenerNavClick(item)">{{item.title}}</li>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
@@ -19,7 +24,8 @@ export default {
   },
   data () {
     return {
-      classification: '分类：'
+      classification: '分类：',
+      ification: []
     }
   },
   methods: {
@@ -31,6 +37,9 @@ export default {
   mounted () {
     // this.getHomeInfo()
     // console.log(this.levels)
+  },
+  watch: {
+
   }
 }
 </script>
@@ -64,5 +73,9 @@ export default {
   color: rgb(201, 59, 59);
   border: solid 1px #b1b1b1;
   transition: all 0.3s;
+}
+
+.disabled {
+  pointer-events: none;
 }
 </style>

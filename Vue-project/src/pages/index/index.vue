@@ -98,9 +98,13 @@ export default {
         url
       ).then(fn)
     }
+    // touchFalut: function (e) {
+    //   document.addEventListener('touchmove', function (e) { e.preventDefalut() }, { passive: false })
+    // }
   },
   mounted () {
     this.getKnowleage()
+    // this.touchFalut()
   }
 }
 </script>

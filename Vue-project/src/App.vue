@@ -14,6 +14,10 @@ export default {
 </script>
 
 <style>
+html {
+  touch-action: none;
+  touch-action: pan-y;
+}
 body {
   background: white;
 }

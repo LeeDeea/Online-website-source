@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const loadingShows = true
+
 const store = new Vuex.Store({
   state: {
     count: 1,
@@ -13,14 +14,25 @@ const store = new Vuex.Store({
   actions: {
     changeLoadingShow(newValue, loadingShow) {
       newValue.commit('changeLoadingShow', loadingShow)
+    },
+    changecount(newValue, count) {
+      newValue.commit('changecount', count)
     }
   },
   mutations: {
     changeLoadingShow(state, loadingShow) {
       state.loadingShow = loadingShow
-      try {
-        localStorage.loadingShow = loadingShow
-      } catch (e) {}
+      // try {
+      //   localStorage.loadingShow = loadingShow
+      // } catch (e) {}
+    },
+    changecount(state, count) {
+      state.count = count
+    }
+  },
+  getters: {
+    getterCount(state) {
+      return state.count;
     }
   }
 })

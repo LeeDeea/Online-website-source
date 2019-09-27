@@ -105,6 +105,20 @@ export default {
   mounted () {
     this.getKnowleage()
     // this.touchFalut()
+    // // 获取vuex中的count值
+    // let count = this.$store.state.count
+    // console.log(count) // 1
+    // // 同步方法修改count值
+    // this.$store.commit('changecount', 2)
+    // let counts = this.$store.state.count
+    // console.log(counts) // 2
+    // // 异步方法修改count值
+    // this.$store.dispatch('changecount', 3)
+    // let countss = this.$store.state.count
+    // console.log(countss) // 3
+    // // getter方法获取
+    // let getcount = this.$store.getters.getterCount
+    // console.log(getcount) // 3
   }
 }
 </script>

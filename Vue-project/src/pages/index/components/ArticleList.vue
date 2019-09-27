@@ -60,7 +60,7 @@
                      class="questionImg"
                      :src="item.url"
                      alt=""
-                     @load="imgfinish(item.url)">
+                     @load="imgfinish()">
               </div>
               <p class="imgAnswe"
                  v-if="item.ImgExplanation"
@@ -102,7 +102,7 @@ export default {
 
       dataAnswer: [{
         'id': 12,
-        'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999',
+        'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：vx:VsevenV73999，右侧导航部分有vx的二维码',
         'explanation': '绿色代表标题描述信息',
         'ImgExplanation': '黄色代表图片描述或细节分析'
       }],
@@ -115,7 +115,7 @@ export default {
         'questions': {
           'question': '题目：请点击上方分类按钮,切换文章列表',
           'answer': [{
-            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：VX:VsevenV73999',
+            'answer': '这是一个简单的网站，会存放一些我整理的有关习题，不过个人时间精力有限,题目整理不当的地方或更新进度缓慢请给予谅解并及时反馈给我,十分感谢,联系方式：vx:VsevenV73999',
             'explanation': '',
             'url': '',
             'ImgExplanation': ''
@@ -159,8 +159,9 @@ export default {
         )
       }, 300)
     },
-    imgfinish (item) {
+    imgfinish () {
       // console.log(this.index += 1, item)
+      // console.log(1)
     },
     hideenArticleList () {
       // 控制文章列表显隐
